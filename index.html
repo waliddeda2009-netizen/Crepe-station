@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Crepe Station</title>
+
+
+<link rel="stylesheet" href="css/style.css">
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+</head>
+
+
+<body>
+
+
+
+
+<!-- =========================
+            HEADER
+========================= -->
+
+
+<header>
+
+
+<div class="navbar container">
+
+
+<a href="index.html" class="logo">
+
+
+<img src="images/logo.png" id="header-logo">
+
+
+</a>
+
+
+
+
+
+<nav>
+
+
+<a href="index.html">
+
+Home
+
+</a>
+
+
+
+<a href="about.html">
+
+About
+
+</a>
+
+
+
+<a href="feedback.html">
+
+Feedback
+
+</a>
+
+
+
+</nav>
+
+
+
+
+
+<div class="header-actions">
+
+
+
+
+
+<div class="cart-icon" id="openCart">
+
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+
+<span id="cartCount">
+
+0
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="menu-circle">
+
+
+<i class="fa-solid fa-bars"></i>
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+</header>
+
+
+
+
+
+
+
+
+
+<!-- =========================
+        SIDEBAR MENU
+========================= -->
+
+
+<div class="bubble-menu">
+
+
+
+<a href="index.html">
+
+<i class="fa-solid fa-house"></i>
+
+Home
+
+</a>
+
+
+
+
+
+<a href="about.html">
+
+<i class="fa-solid fa-circle-info"></i>
+
+About
+
+</a>
+
+
+
+
+
+<a href="feedback.html">
+
+<i class="fa-solid fa-comment-dots"></i>
+
+Feedback
+
+</a>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- =========================
+            HERO
+========================= -->
+
+
+<section class="hero">
+
+
+<div class="hero-content">
+
+
+
+<img src="images/logo.png"
+
+id="hero-logo"
+
+class="hero-logo">
+
+
+
+
+
+<div class="hero-text">
+
+
+<h1>
+
+Fresh Crepes Made For You
+
+</h1>
+
+
+
+
+<p>
+
+Choose your favorite taste and enjoy
+
+</p>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<a href="#menu" class="order-btn-main">
+
+
+Order Now
+
+
+</a>
+
+
+
+
+
+</div>
+
+
+</section>
+
+<!-- =========================
+            MENU
+========================= -->
+
+
+<section class="menu-section" id="menu">
+
+
+
+<div class="container">
+
+
+
+<h2 class="section-title">
+
+Our Menu
+
+</h2>
+
+
+
+
+
+<!-- CATEGORY FILTER -->
+
+
+<div class="categories-slider" id="categories">
+
+
+<!-- Categories From Firebase -->
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- PRODUCTS -->
+
+
+<div class="menu-grid" id="products">
+
+
+<!-- Products From Firebase -->
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- =========================
+            OFFERS
+========================= -->
+
+
+<section class="offers-section">
+
+
+<div class="container">
+
+
+<h2 class="section-title">
+
+Special Offers
+
+</h2>
+
+
+
+
+
+
+<div class="menu-grid" id="offers">
+
+
+<!-- Offers From Firebase -->
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- =========================
+            CART
+========================= -->
+
+
+<div class="cart-overlay" id="cartOverlay"></div>
+
+
+
+
+<div class="cart-box" id="cartBox">
+
+
+
+<div class="cart-header">
+
+
+<h3>
+
+Your Order
+
+</h3>
+
+
+
+<i class="fa-solid fa-xmark" id="closeCart"></i>
+
+
+</div>
+
+
+
+
+
+
+<div class="cart-items" id="cartItems">
+
+
+<!-- Cart Items -->
+
+
+</div>
+
+
+
+
+
+
+<div class="cart-footer">
+
+
+<h3>
+
+Total:
+
+<span id="cartTotal">
+
+0
+
+</span>
+
+EGP
+
+</h3>
+
+
+
+
+
+<button id="checkoutBtn">
+
+Checkout
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+<!-- =========================
+            FOOTER
+========================= -->
+
+
+<footer>
+
+
+<div class="container">
+
+
+
+
+
+
+<img src="images/logo.png"
+
+class="footer-logo"
+
+alt="Crepe Station Logo">
+
+
+
+
+
+
+<p>
+
+Fresh Taste • Fast Delivery • Premium Quality
+
+</p>
+
+
+
+
+
+
+
+
+
+<div class="social">
+
+
+
+
+
+
+<a href="https://www.facebook.com/share/1TYLLFBauy/?mibextid=wwXIfr" target="_blank">
+
+<i class="fa-brands fa-facebook-f"></i>
+
+</a>
+
+
+
+
+
+
+<a href="https://www.instagram.com/crepe__station_?igsh=bTVwZmw2N3YwdnNn" target="_blank">
+
+<i class="fa-brands fa-instagram"></i>
+
+</a>
+
+
+
+
+
+
+<a href="https://www.tiktok.com/@crepe.station6?_r=1&_t=ZS-98CUDtjubfW" target="_blank">
+
+<i class="fa-brands fa-tiktok"></i>
+
+</a>
+
+
+
+
+
+
+
+<a href="https://wa.me/message/F7W35X5N36DID1" target="_blank">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<p class="copyright">
+
+© 2026 Crepe Station. All Rights Reserved.
+
+</p>
+
+
+
+
+
+
+</div>
+
+
+
+</footer>
+
+
+
+
+
+
+
+
+
+<script type="module" src="js/script.js"></script>
+
+
+
+
+</body>
+
+
+</html>
