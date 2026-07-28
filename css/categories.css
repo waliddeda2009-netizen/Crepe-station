@@ -1,0 +1,835 @@
+/*==================================
+     CREPE STATION CATEGORIES PANEL
+==================================*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+
+    -webkit-tap-highlight-color:transparent;
+
+}
+
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+
+body{
+
+    min-height:100vh;
+
+    background:
+
+    radial-gradient(circle at top,#253944,#16252D 45%);
+
+    color:white;
+
+}
+
+
+
+
+
+
+/*==================================
+        REMOVE BLUE EFFECT
+==================================*/
+
+
+button,
+a,
+input,
+textarea,
+select{
+
+    outline:none;
+
+    -webkit-tap-highlight-color:transparent;
+
+}
+
+
+
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus{
+
+    outline:none;
+
+    box-shadow:none;
+
+}
+
+
+
+
+
+
+/*==================================
+            HEADER
+==================================*/
+
+
+.header{
+
+    padding:15px 25px;
+
+    background:#101820;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:10;
+
+}
+
+
+
+
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+
+
+.logo img{
+
+    width:45px;
+
+}
+
+
+
+.logo h2{
+
+    font-size:18px;
+
+}
+
+
+
+.logo span{
+
+    color:#d4af37;
+
+}
+
+
+
+
+
+
+.header-buttons{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+
+
+
+
+.header-buttons a,
+.header-buttons button{
+
+    padding:10px 16px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#d4af37;
+
+    color:#111;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    text-decoration:none;
+
+    font-size:13px;
+
+    transition:.3s ease;
+
+}
+
+
+
+.header-buttons a:hover,
+.header-buttons button:hover{
+
+    transform:translateY(-3px);
+
+}
+
+
+
+
+
+
+
+
+/*==================================
+            CONTAINER
+==================================*/
+
+
+.container{
+
+    width:92%;
+
+    margin:30px auto;
+
+}
+
+
+
+
+
+
+
+
+/*==================================
+            GLASS CARD
+==================================*/
+
+
+.glass-card{
+
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:22px;
+
+    padding:25px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.25);
+
+
+}
+
+
+
+
+.glass-card h2{
+
+    color:#d4af37;
+
+    margin-bottom:25px;
+
+    font-size:23px;
+
+}
+
+
+
+
+
+.title{
+
+    color:#d4af37;
+
+    margin:30px 0 15px;
+
+    font-size:18px;
+
+}
+
+
+
+
+
+
+
+
+
+/*==================================
+            FORM
+==================================*/
+
+
+#categoryForm{
+
+
+    display:flex;
+
+    gap:12px;
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+
+#categoryForm input{
+
+
+    flex:1;
+
+    padding:13px;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-size:14px;
+
+}
+
+
+
+
+
+#categoryForm input:focus{
+
+
+    box-shadow:0 0 0 2px #d4af37;
+
+
+}
+
+
+
+
+
+
+#categoryForm button{
+
+
+    padding:12px 22px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#d4af37;
+
+    color:#111;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
+
+}
+
+
+
+
+#categoryForm button:hover{
+
+
+    transform:translateY(-3px);
+
+
+}
+
+
+
+
+
+
+
+
+/*==================================
+        CATEGORY SLIDER
+==================================*/
+
+
+#categoriesList{
+
+
+    display:flex;
+
+    gap:15px;
+
+    overflow-x:auto;
+
+    padding:10px 5px 20px;
+
+    scroll-behavior:smooth;
+
+
+}
+
+
+
+
+
+#categoriesList::-webkit-scrollbar{
+
+    height:5px;
+
+}
+
+
+
+#categoriesList::-webkit-scrollbar-thumb{
+
+    background:#d4af37;
+
+    border-radius:20px;
+
+}
+
+
+
+
+
+
+
+
+
+/*==================================
+        CATEGORY CARD
+==================================*/
+
+
+.category-card{
+
+
+    min-width:220px;
+
+    background:#101820;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    flex-shrink:0;
+
+    cursor:pointer;
+
+    transition:.35s ease;
+
+    animation:fadeUp .5s ease;
+
+
+}
+
+
+
+
+.category-card:hover{
+
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 25px rgba(0,0,0,.3);
+
+
+}
+
+
+
+
+
+
+
+.category-card h3{
+
+
+    color:#d4af37;
+
+    margin-bottom:12px;
+
+
+}
+
+
+
+
+
+
+
+
+/*==================================
+            BUTTONS
+==================================*/
+
+
+.category-card button{
+
+
+    padding:8px 12px;
+
+    border:none;
+
+    border-radius:10px;
+
+    margin-top:8px;
+
+    margin-right:5px;
+
+    cursor:pointer;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    transition:.3s ease;
+
+
+}
+
+
+
+.category-card button:hover{
+
+
+    transform:translateY(-2px);
+
+
+}
+
+
+
+
+.view-btn{
+
+
+    background:#3498db;
+
+    color:white;
+
+}
+
+
+
+
+.edit-btn{
+
+
+    background:#d4af37;
+
+    color:#111;
+
+
+}
+
+
+
+
+.delete-btn{
+
+
+    background:#e74c3c;
+
+    color:white;
+
+
+}
+
+
+
+
+
+
+
+
+
+/*==================================
+        PRODUCTS AREA
+==================================*/
+
+
+#categoryProducts{
+
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(220px,1fr));
+
+
+    gap:15px;
+
+    margin-top:20px;
+
+}
+
+
+
+
+
+
+
+
+.product-card{
+
+
+    background:#101820;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    animation:slideDown .5s ease;
+
+    transition:.3s ease;
+
+
+}
+
+
+
+
+
+.product-card:hover{
+
+
+    transform:translateY(-6px);
+
+
+}
+
+
+
+
+
+
+.product-card img{
+
+
+    width:100%;
+
+    height:150px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+    margin-bottom:12px;
+
+
+}
+
+
+
+
+.product-card h3{
+
+
+    color:#d4af37;
+
+    margin-bottom:8px;
+
+
+}
+
+
+
+
+.product-card p{
+
+
+    font-size:14px;
+
+    margin-bottom:6px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/*==================================
+            ANIMATION
+==================================*/
+
+
+@keyframes fadeUp{
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+
+}
+
+
+
+
+@keyframes slideDown{
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-25px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+/*==================================
+            FOOTER
+==================================*/
+
+
+.footer{
+
+
+    text-align:center;
+
+    padding:20px;
+
+    opacity:.7;
+
+    font-size:13px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/*==================================
+            MOBILE
+==================================*/
+
+
+@media(max-width:600px){
+
+
+
+.header{
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+
+
+.header-buttons{
+
+    width:100%;
+
+    justify-content:center;
+
+}
+
+
+
+.container{
+
+    width:95%;
+
+}
+
+
+
+#categoryForm{
+
+    flex-direction:column;
+
+}
+
+
+
+.category-card{
+
+    min-width:200px;
+
+}
+
+
+
+.category-card button{
+
+    width:100%;
+
+    margin-right:0;
+
+}
+
+
+
+}

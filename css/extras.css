@@ -1,0 +1,760 @@
+/*==================================
+     CREPE STATION EXTRAS PANEL
+==================================*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+
+}
+
+
+body{
+
+    min-height:100vh;
+
+    background:#16252D;
+
+    color:white;
+
+}
+
+
+
+/*=========================
+        HEADER
+=========================*/
+
+
+.header{
+
+    padding:15px 25px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:#101820;
+
+}
+
+
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+
+
+.logo img{
+
+    width:45px;
+
+}
+
+
+
+.logo h2{
+
+    font-size:18px;
+
+}
+
+
+
+.logo span{
+
+    color:#d4af37;
+
+}
+
+
+
+
+
+.header-buttons{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+
+
+
+
+.header-buttons a,
+.header-buttons button{
+
+
+    padding:8px 15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#d4af37;
+
+    color:#111;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+.header-buttons a:hover,
+.header-buttons button:hover{
+
+    transform:translateY(-2px);
+
+}
+
+
+
+/*=========================
+        CONTAINER
+=========================*/
+
+
+.container{
+
+    width:92%;
+
+    margin:30px auto;
+
+}
+
+
+
+
+
+/*=========================
+        GLASS CARD
+=========================*/
+
+
+.glass-card{
+
+
+    background:rgba(255,255,255,.06);
+
+
+    backdrop-filter:blur(12px);
+
+
+    padding:22px;
+
+
+    border-radius:18px;
+
+
+    border:1px solid rgba(255,255,255,.12);
+
+
+}
+
+
+
+
+
+.glass-card h2{
+
+
+    color:#d4af37;
+
+
+    font-size:22px;
+
+
+    margin-bottom:20px;
+
+
+}
+/*=========================
+        SEARCH BOX
+=========================*/
+
+
+.search-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    background:#101820;
+
+    padding:12px 15px;
+
+    border-radius:12px;
+
+    margin-bottom:20px;
+
+}
+
+
+.search-box i{
+
+    color:#d4af37;
+
+}
+
+
+.search-box input{
+
+    width:100%;
+
+    background:transparent;
+
+    border:none;
+
+    outline:none;
+
+    color:white;
+
+    font-size:14px;
+
+}
+
+
+
+/*=========================
+        FORM
+=========================*/
+
+
+#extraForm{
+
+    display:grid;
+
+    gap:12px;
+
+}
+
+
+
+#extraForm input,
+#extraForm textarea{
+
+
+    padding:12px;
+
+
+    border:none;
+
+
+    outline:none;
+
+
+    border-radius:10px;
+
+
+    font-size:14px;
+
+
+    font-family:"Poppins",sans-serif;
+
+
+}
+
+
+
+#extraForm textarea{
+
+
+    height:90px;
+
+
+    resize:none;
+
+
+}
+
+
+
+.check-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-size:14px;
+
+}
+
+
+
+.check-box input{
+
+    width:18px;
+
+    height:18px;
+
+    cursor:pointer;
+
+}
+
+
+
+#quantityBox{
+
+    transition:.3s;
+
+}
+
+
+
+#extraForm button{
+
+
+    padding:12px;
+
+
+    border:none;
+
+
+    border-radius:10px;
+
+
+    background:#d4af37;
+
+
+    color:#111;
+
+
+    font-weight:700;
+
+
+    cursor:pointer;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+#extraForm button:hover{
+
+    transform:scale(1.02);
+
+}
+
+
+
+/*=========================
+        DIVIDER
+=========================*/
+
+
+.divider{
+
+    margin:30px 0;
+
+    border:none;
+
+    height:1px;
+
+    background:rgba(255,255,255,.15);
+
+}
+
+
+
+/*=========================
+        EXTRAS GRID
+=========================*/
+
+
+#extrasList{
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(220px,1fr));
+
+
+    gap:15px;
+
+
+}
+/*=========================
+        EXTRA CARD
+=========================*/
+
+
+.extra-card{
+
+    background:#101820;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    transition:.3s;
+
+    animation:show .35s ease;
+
+}
+
+
+
+.extra-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+
+
+.extra-card img{
+
+    width:100%;
+
+    height:120px;
+
+    object-fit:cover;
+
+}
+
+
+
+
+.extra-content{
+
+    padding:15px;
+
+}
+
+
+
+.extra-content h3{
+
+    color:#d4af37;
+
+    font-size:17px;
+
+}
+
+
+
+.extra-content p{
+
+    font-size:13px;
+
+    margin-top:6px;
+
+    opacity:.8;
+
+}
+
+
+
+.extra-price{
+
+    color:#d4af37;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    margin-top:10px;
+
+}
+
+
+
+
+.stock{
+
+    display:inline-block;
+
+    margin-top:10px;
+
+    padding:5px 12px;
+
+    border-radius:20px;
+
+    font-size:12px;
+
+    font-weight:700;
+
+}
+
+
+
+.available{
+
+    background:#27ae60;
+
+    color:white;
+
+}
+
+
+
+.low{
+
+    background:#d4af37;
+
+    color:#111;
+
+}
+
+
+
+.out{
+
+    background:#e74c3c;
+
+    color:white;
+
+}
+
+
+
+
+
+/*=========================
+        BUTTONS
+=========================*/
+
+
+.card-buttons{
+
+    display:flex;
+
+    gap:8px;
+
+    margin-top:15px;
+
+}
+
+
+
+.card-buttons button{
+
+    flex:1;
+
+    padding:8px;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+
+
+.edit-btn{
+
+    background:#d4af37;
+
+    color:#111;
+
+}
+
+
+
+.delete-btn{
+
+    background:#e74c3c;
+
+    color:white;
+
+}
+
+
+
+
+/*=========================
+        ANIMATION
+=========================*/
+
+
+@keyframes show{
+
+from{
+
+opacity:0;
+
+transform:translateY(15px);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+
+
+/*=========================
+        FOOTER
+=========================*/
+
+
+.footer{
+
+    text-align:center;
+
+    padding:15px;
+
+    font-size:13px;
+
+    opacity:.7;
+
+}
+
+
+
+
+
+/*=========================
+        REMOVE BLUE TAP
+=========================*/
+
+
+*{
+
+    -webkit-tap-highlight-color:transparent;
+
+}
+
+
+
+button,
+input,
+textarea,
+a{
+
+    outline:none;
+
+}
+
+
+
+
+
+/*=========================
+        SCROLLBAR
+=========================*/
+
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+
+
+::-webkit-scrollbar-track{
+
+    background:#16252D;
+
+}
+
+
+
+::-webkit-scrollbar-thumb{
+
+    background:#d4af37;
+
+    border-radius:20px;
+
+}
+
+
+
+
+
+/*=========================
+        MOBILE
+=========================*/
+
+
+@media(max-width:600px){
+
+
+.header{
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+
+
+.container{
+
+    width:95%;
+
+}
+
+
+
+#extrasList{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.header-buttons{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+
+}

@@ -1,0 +1,540 @@
+/*==================================
+        CREPE STATION DASHBOARD
+==================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    -webkit-tap-highlight-color:transparent;
+}
+
+body{
+
+    min-height:100vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url("../images/background.png");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+
+    color:#fff;
+
+}
+
+.header{
+
+    width:100%;
+
+    padding:20px 40px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border-bottom:1px solid rgba(255,255,255,.15);
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.logo img{
+
+    width:70px;
+
+}
+
+.logo h2{
+
+    font-size:28px;
+
+    color:#fff;
+
+}
+
+.logo span{
+
+    color:#F2C230;
+
+}
+
+#logoutBtn{
+
+    padding:12px 20px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#F2C230;
+
+    color:#111;
+
+    cursor:pointer;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+#logoutBtn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.dashboard{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:40px auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:25px;
+
+}
+
+.card{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#F2C230;
+
+}
+
+.card i{
+
+    font-size:50px;
+
+    color:#F2C230;
+
+    margin-bottom:20px;
+
+}
+
+.card h3{
+
+    font-size:25px;
+
+    margin-bottom:10px;
+
+}
+
+.card p{
+
+    color:#ddd;
+
+}
+/*=========================
+        PANELS
+=========================*/
+
+.panel{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:30px auto;
+
+    padding:30px;
+
+    display:none;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:25px;
+
+    animation:fade .4s ease;
+
+}
+
+.panel.active{
+
+    display:block;
+
+}
+
+.panel h2{
+
+    color:#F2C230;
+
+    margin-bottom:25px;
+
+    font-size:28px;
+
+}
+
+/*=========================
+        FORMS
+=========================*/
+
+.panel form{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+
+}
+
+.panel input{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.08);
+
+    color:#fff;
+
+    border:1px solid rgba(255,255,255,.15);
+
+}
+
+.panel input::placeholder{
+
+    color:#ddd;
+
+}
+
+.check-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#fff;
+
+}
+
+.panel button{
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#F2C230;
+
+    color:#111;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.panel button:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/*=========================
+        LISTS
+=========================*/
+
+#productsList,
+#offersList,
+#stockList{
+
+    margin-top:30px;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:20px;
+
+}
+/*=========================
+        PRODUCT CARD
+=========================*/
+
+.item{
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:.3s;
+
+}
+
+.item:hover{
+
+    transform:translateY(-5px);
+
+    border-color:#F2C230;
+
+}
+
+.item img{
+
+    width:100%;
+
+    height:200px;
+
+    object-fit:cover;
+
+}
+
+.item-content{
+
+    padding:20px;
+
+}
+
+.item-content h3{
+
+    color:#F2C230;
+
+    margin-bottom:10px;
+
+}
+
+.item-content p{
+
+    color:#ddd;
+
+    margin-bottom:15px;
+
+}
+
+.actions{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.actions button{
+
+    flex:1;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+}
+
+.edit-btn{
+
+    background:#0d6efd;
+
+    color:#fff;
+
+}
+
+.delete-btn{
+
+    background:#dc3545;
+
+    color:#fff;
+
+}
+
+
+/*=========================
+        FOOTER
+=========================*/
+
+.footer{
+
+    text-align:center;
+
+    padding:30px 20px;
+
+    color:#ddd;
+
+}
+
+
+/*=========================
+        RESPONSIVE
+=========================*/
+
+@media(max-width:768px){
+
+    .header{
+
+        flex-direction:column;
+
+        gap:15px;
+
+        padding:20px;
+
+    }
+
+    .logo{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .logo img{
+
+        width:60px;
+
+    }
+
+    .logo h2{
+
+        font-size:24px;
+
+    }
+
+    .panel{
+
+        width:95%;
+
+        padding:20px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .dashboard{
+
+        width:95%;
+
+    }
+
+    .card{
+
+        padding:25px;
+
+    }
+
+}
+
+
+/*=========================
+        ANIMATION
+=========================*/
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/*=========================
+        SCROLLBAR
+=========================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#F2C230;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#111;
+
+}
