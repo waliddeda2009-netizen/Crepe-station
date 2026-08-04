@@ -26,29 +26,32 @@ getDoc
 //==================================
 
 
-const extraForm = document.getElementById("extraForm");
+const extraForm=document.getElementById("extraForm");
 
-const extrasList = document.getElementById("extrasList");
+const extrasList=document.getElementById("extrasList");
 
-const saveExtraBtn = document.getElementById("saveExtraBtn");
+const saveExtraBtn=document.getElementById("saveExtraBtn");
 
-const trackStock = document.getElementById("trackStock");
+const trackStock=document.getElementById("trackStock");
 
-const quantityBox = document.getElementById("quantityBox");
+const quantityBox=document.getElementById("quantityBox");
 
-const searchExtra = document.getElementById("searchExtra");
+const searchExtra=document.getElementById("searchExtra");
+
+const extraType=document.getElementById("extraType");
 
 
 
-let editId = null;
+let editId=null;
 
-let allExtras = [];
+let allExtras=[];
+
 
 
 
 
 //==================================
-// SHOW / HIDE QUANTITY
+// SHOW QUANTITY
 //==================================
 
 
@@ -58,28 +61,29 @@ if(trackStock){
 trackStock.addEventListener("change",()=>{
 
 
-    if(trackStock.checked){
+if(trackStock.checked){
 
 
-        quantityBox.style.display="block";
+quantityBox.style.display="block";
 
 
-    }else{
+}else{
 
 
-        quantityBox.style.display="none";
+quantityBox.style.display="none";
 
 
-        document.getElementById("extraQuantity").value="";
+document.getElementById("extraQuantity").value="";
 
 
-    }
+}
 
 
 });
 
 
 }
+
 
 
 
@@ -92,40 +96,39 @@ trackStock.addEventListener("change",()=>{
 async function loadExtras(){
 
 
-    if(!extrasList) return;
+extrasList.innerHTML="";
 
 
-    extrasList.innerHTML="";
-
-
-    allExtras=[];
-
-
-    const snapshot = await getDocs(
-
-        collection(db,"extras")
-
-    );
+allExtras=[];
 
 
 
-    snapshot.forEach((item)=>{
+const snapshot=await getDocs(
 
+collection(db,"extras")
 
-        allExtras.push({
-
-            id:item.id,
-
-            ...item.data()
-
-        });
-
-
-    });
+);
 
 
 
-    displayExtras(allExtras);
+snapshot.forEach(item=>{
+
+
+allExtras.push({
+
+id:item.id,
+
+...item.data()
+
+});
+
+
+});
+
+
+
+displayExtras(allExtras);
+
 
 
 }
@@ -137,207 +140,196 @@ async function loadExtras(){
 function displayExtras(extras){
 
 
-    extrasList.innerHTML="";
+extrasList.innerHTML="";
 
 
 
-    if(extras.length === 0){
+if(extras.length===0){
 
 
-        extrasList.innerHTML = `
+extrasList.innerHTML=`
 
+<div class="empty-box">
 
-        <div class="empty-box">
+<i class="fa-solid fa-box-open"></i>
 
+<h3>No Extras Found</h3>
 
-        <i class="fa-solid fa-box-open"></i>
+</div>
 
+`;
 
-        <h3>No Extras Found</h3>
 
+return;
 
-        </div>
+}
 
 
-        `;
 
 
-        return;
+extras.forEach(extra=>{
 
 
-    }
 
+let stockStatus="";
 
 
 
-    extras.forEach(extra=>{
+if(extra.trackStock){
 
 
+if(extra.quantity<=0){
 
-        let stockStatus = "";
 
+stockStatus=`
 
+<span class="stock out">
 
-        if(extra.trackStock){
+Out Of Stock
 
+</span>
 
-            if(extra.quantity <= 0){
+`;
 
 
-                stockStatus = `
 
-                <span class="stock out">
+}else if(extra.quantity<=5){
 
-                Out Of Stock
 
-                </span>
+stockStatus=`
 
-                `;
+<span class="stock low">
 
+Low Stock: ${extra.quantity}
 
-            }
+</span>
 
-            else if(extra.quantity <= 5){
+`;
 
 
-                stockStatus = `
 
-                <span class="stock low">
+}else{
 
-                Low Stock: ${extra.quantity}
 
-                </span>
+stockStatus=`
 
-                `;
+<span class="stock available">
 
+Available: ${extra.quantity}
 
-            }
+</span>
 
-            else{
+`;
 
-
-                stockStatus = `
-
-                <span class="stock available">
-
-                Available: ${extra.quantity}
-
-                </span>
-
-                `;
-
-
-            }
-
-
-        }
-
-
-
-
-
-
-
-        extrasList.innerHTML += `
-
-
-        <div class="extra-card">
-
-
-            <img
-
-            src="${extra.image || 'images/no-image.png'}">
-
-
-            <div class="extra-content">
-
-
-
-                <h3>
-
-                ${extra.name}
-
-                </h3>
-
-
-
-                <p>
-
-                ${extra.description || ""}
-
-                </p>
-
-
-
-                <div class="extra-price">
-
-                ${extra.price} EGP
-
-                </div>
-
-
-
-
-                ${stockStatus}
-
-
-
-
-
-                <div class="card-buttons">
-
-
-                <button
-
-                class="edit-btn"
-
-                onclick="editExtra('${extra.id}')">
-
-                Edit
-
-                </button>
-
-
-
-
-
-                <button
-
-                class="delete-btn"
-
-                onclick="deleteExtra('${extra.id}')">
-
-                Delete
-
-                </button>
-
-
-
-                </div>
-
-
-
-
-            </div>
-
-
-
-        </div>
-
-
-
-        `;
-
-
-
-    });
-
+}
 
 
 }
 
 
 
+
+
+extrasList.innerHTML+=`
+
+
+<div class="extra-card">
+
+
+<img src="${extra.image || 'images/no-image.png'}">
+
+
+
+<div class="extra-content">
+
+
+<h3>
+
+${extra.name}
+
+</h3>
+
+
+
+<p>
+
+${extra.description || ""}
+
+</p>
+
+
+
+
+<div class="extra-price">
+
+${extra.price} EGP
+
+</div>
+
+
+
+<p>
+
+Type:
+
+${extra.type==="order" ? "Order Extra" : "Inside Product"}
+
+</p>
+
+
+
+
+${stockStatus}
+
+
+
+<div class="card-buttons">
+
+
+<button
+
+class="edit-btn"
+
+onclick="editExtra('${extra.id}')">
+
+Edit
+
+</button>
+
+
+
+
+<button
+
+class="delete-btn"
+
+onclick="deleteExtra('${extra.id}')">
+
+Delete
+
+</button>
+
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+`;
+
+
+
+});
+
+
+
+}
 
 
 
@@ -353,199 +345,173 @@ if(searchExtra){
 searchExtra.addEventListener("input",()=>{
 
 
-    const value = searchExtra.value.toLowerCase();
+let value=searchExtra.value.toLowerCase();
 
 
 
-    const filtered = allExtras.filter(extra=>{
+let filtered=allExtras.filter(extra=>{
 
 
-        return extra.name
-
-        .toLowerCase()
-
-        .includes(value);
-
-
-
-    });
-
-
-
-    displayExtras(filtered);
-
+return extra.name.toLowerCase().includes(value);
 
 
 });
 
 
 
+displayExtras(filtered);
+
+
+
+});
+
+
 }
+
+
+
+
 //==================================
 // ADD / UPDATE EXTRA
 //==================================
 
 
-extraForm.addEventListener("submit", async(e)=>{
+extraForm.addEventListener("submit",async(e)=>{
 
 
-    e.preventDefault();
+e.preventDefault();
 
 
 
-    const extraData = {
+const extraData={
 
 
-        name:
+name:
 
-        document.getElementById("extraName").value,
+document.getElementById("extraName").value,
 
 
 
-        image:
+image:
 
-        document.getElementById("extraImage").value,
+document.getElementById("extraImage").value,
 
 
 
-        description:
+description:
 
-        document.getElementById("extraDescription").value,
+document.getElementById("extraDescription").value,
 
 
 
-        price:
+price:
 
-        Number(
+Number(document.getElementById("extraPrice").value),
 
-        document.getElementById("extraPrice").value
 
-        ),
 
+type:
 
+extraType.value,
 
-        trackStock:
 
-        document.getElementById("trackStock").checked,
 
+trackStock:
 
+trackStock.checked,
 
-        quantity:
 
-        Number(
 
-        document.getElementById("extraQuantity").value || 0
+quantity:
 
-        )
-
-
-    };
-
-
-
-
-
-
-
-    if(editId){
-
-
-
-        await updateDoc(
-
-            doc(db,"extras",editId),
-
-            extraData
-
-        );
-
-
-
-        alert("Extra Updated");
-
-
-
-        editId=null;
-
-
-
-        saveExtraBtn.innerText="Add Extra";
-
-
-
-    }else{
-
-
-
-        await addDoc(
-
-            collection(db,"extras"),
-
-            extraData
-
-        );
-
-
-
-        alert("Extra Added");
-
-
-
-    }
-
-
-
-
-
-
-
-    extraForm.reset();
-
-
-
-    quantityBox.style.display="none";
-
-
-
-    loadExtras();
-
-
-
-});
-
-
-
-
-
-
-
-//==================================
-// DELETE EXTRA
-//==================================
-
-
-window.deleteExtra = async function(id){
-
-
-
-    await deleteDoc(
-
-        doc(db,"extras",id)
-
-    );
-
-
-
-    alert("Extra Deleted");
-
-
-
-    loadExtras();
+Number(document.getElementById("extraQuantity").value || 0)
 
 
 
 };
 
+
+
+if(editId){
+
+
+await updateDoc(
+
+doc(db,"extras",editId),
+
+extraData
+
+);
+
+
+
+alert("Extra Updated");
+
+
+
+editId=null;
+
+
+saveExtraBtn.innerText="Add Extra";
+
+
+
+}else{
+
+
+await addDoc(
+
+collection(db,"extras"),
+
+extraData
+
+);
+
+
+
+alert("Extra Added");
+
+
+}
+
+
+
+extraForm.reset();
+
+
+quantityBox.style.display="none";
+
+
+loadExtras();
+
+
+
+});
+//==================================
+// DELETE EXTRA
+//==================================
+
+
+window.deleteExtra=async function(id){
+
+
+await deleteDoc(
+
+doc(db,"extras",id)
+
+);
+
+
+
+alert("Extra Deleted");
+
+
+
+loadExtras();
+
+
+
+};
 
 
 
@@ -557,94 +523,107 @@ window.deleteExtra = async function(id){
 //==================================
 
 
-window.editExtra = async function(id){
+window.editExtra=async function(id){
 
 
 
-    const extraRef = doc(db,"extras",id);
+const extraRef=doc(db,"extras",id);
 
 
 
-    const extraSnap = await getDoc(extraRef);
+const extraSnap=await getDoc(extraRef);
 
 
 
-    const extra = extraSnap.data();
-
-
-
-
-
-
-    document.getElementById("extraName").value =
-
-    extra.name || "";
-
-
-
-
-    document.getElementById("extraImage").value =
-
-    extra.image || "";
-
-
-
-
-    document.getElementById("extraDescription").value =
-
-    extra.description || "";
-
-
-
-
-    document.getElementById("extraPrice").value =
-
-    extra.price || "";
-
-
-
-
-    document.getElementById("trackStock").checked =
-
-    extra.trackStock || false;
+const extra=extraSnap.data();
 
 
 
 
 
-    document.getElementById("extraQuantity").value =
+document.getElementById("extraName").value=
 
-    extra.quantity || "";
-
-
-
-
-
-    if(extra.trackStock){
-
-        quantityBox.style.display="block";
-
-    }else{
-
-        quantityBox.style.display="none";
-
-    }
+extra.name || "";
 
 
 
 
 
+document.getElementById("extraImage").value=
 
-    editId=id;
+extra.image || "";
 
 
 
-    saveExtraBtn.innerText="Update Extra";
+
+
+document.getElementById("extraDescription").value=
+
+extra.description || "";
+
+
+
+
+
+document.getElementById("extraPrice").value=
+
+extra.price || "";
+
+
+
+
+
+extraType.value=
+
+extra.type || "product";
+
+
+
+
+
+trackStock.checked=
+
+extra.trackStock || false;
+
+
+
+
+
+document.getElementById("extraQuantity").value=
+
+extra.quantity || "";
+
+
+
+
+
+if(extra.trackStock){
+
+
+quantityBox.style.display="block";
+
+
+}else{
+
+
+quantityBox.style.display="none";
+
+
+}
+
+
+
+
+
+editId=id;
+
+
+
+saveExtraBtn.innerText="Update Extra";
 
 
 
 };
-
 
 
 
@@ -657,63 +636,20 @@ window.editExtra = async function(id){
 //==================================
 
 
-const logoutBtn = document.getElementById("logoutBtn");
+const logoutBtn=document.getElementById("logoutBtn");
 
 
 
 if(logoutBtn){
 
 
-logoutBtn.addEventListener("click",()=>{
+logoutBtn.onclick=()=>{
 
 
-    window.location.href="admin.html";
+window.location.href="admin.html";
 
 
-});
-
-
-}
-
-
-
-
-
-
-
-//==================================
-// IMAGE PREVIEW
-//==================================
-
-
-const imageInput = document.getElementById("extraImage");
-
-const previewImg = document.getElementById("previewImg");
-
-
-
-if(imageInput && previewImg){
-
-
-imageInput.addEventListener("input",()=>{
-
-
-    if(imageInput.value){
-
-
-        previewImg.src=imageInput.value;
-
-
-    }else{
-
-
-        previewImg.src="images/no-image.png";
-
-
-    }
-
-
-});
+};
 
 
 }

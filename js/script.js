@@ -3,7 +3,6 @@
 //==================================
 
 
-
 //==================================
 // LOGO MOVEMENT
 //==================================
@@ -26,7 +25,6 @@ if(heroLogo && header){
 
             heroLogo.classList.add("hide");
 
-
             header.classList.add("scrolled");
 
             header.classList.add("active");
@@ -37,7 +35,6 @@ if(heroLogo && header){
 
             heroLogo.classList.remove("hide");
 
-
             header.classList.remove("scrolled");
 
             header.classList.remove("active");
@@ -47,7 +44,6 @@ if(heroLogo && header){
 
 
     });
-
 
 
 }else{
@@ -90,7 +86,6 @@ if(orderBtn){
         const menuSection = document.querySelector("#menu");
 
 
-
         if(menuSection){
 
 
@@ -131,7 +126,6 @@ const menuIcon = document.querySelector(".menu-circle i");
 
 
 
-
 if(menuBtn && bubbleMenu && menuIcon){
 
 
@@ -152,20 +146,20 @@ if(menuBtn && bubbleMenu && menuIcon){
         if(bubbleMenu.classList.contains("active")){
 
 
-            menuIcon.className = "fa-solid fa-xmark";
+            menuIcon.className="fa-solid fa-xmark";
 
 
         }else{
 
 
-            menuIcon.className = "fa-solid fa-bars";
+            menuIcon.className="fa-solid fa-bars";
 
 
         }
 
 
-
     });
+
 
 
 
@@ -179,9 +173,7 @@ if(menuBtn && bubbleMenu && menuIcon){
 
             bubbleMenu.classList.remove("active");
 
-
             menuBtn.classList.remove("active");
-
 
             menuIcon.className="fa-solid fa-bars";
 
@@ -194,21 +186,24 @@ if(menuBtn && bubbleMenu && menuIcon){
 
 
 
+
     document.addEventListener("click",(e)=>{
 
 
         if(
+
             !menuBtn.contains(e.target)
+
             &&
+
             !bubbleMenu.contains(e.target)
+
         ){
 
 
             bubbleMenu.classList.remove("active");
 
-
             menuBtn.classList.remove("active");
-
 
             menuIcon.className="fa-solid fa-bars";
 
@@ -220,7 +215,6 @@ if(menuBtn && bubbleMenu && menuIcon){
 
 
 }
-
 //==================================
 // SCROLL ANIMATION
 //==================================
@@ -239,9 +233,7 @@ animatedItems.forEach(item=>{
 
     item.style.opacity="0";
 
-
     item.style.transform="translateY(40px)";
-
 
     item.style.transition=".8s ease";
 
@@ -258,9 +250,7 @@ function showAnimation(){
     animatedItems.forEach(item=>{
 
 
-        const position =
-
-        item.getBoundingClientRect().top;
+        const position = item.getBoundingClientRect().top;
 
 
 
@@ -269,12 +259,10 @@ function showAnimation(){
 
             item.style.opacity="1";
 
-
             item.style.transform="translateY(0)";
 
 
         }
-
 
 
     });
@@ -284,9 +272,7 @@ function showAnimation(){
 
 
 
-
 window.addEventListener("scroll",showAnimation);
-
 
 showAnimation();
 
@@ -305,7 +291,6 @@ showAnimation();
 import { db } from "../firebase.js";
 
 
-
 import {
 
 
@@ -322,28 +307,18 @@ getDocs
 
 
 
-
 //==================================
 // ELEMENTS
 //==================================
 
 
-const productsContainer =
-
-document.getElementById("products");
+const productsContainer = document.getElementById("products");
 
 
-
-const categoriesContainer =
-
-document.getElementById("categories");
+const categoriesContainer = document.getElementById("categories");
 
 
-
-const offersContainer =
-
-document.getElementById("offers");
-
+const offersContainer = document.getElementById("offers");
 
 
 
@@ -351,9 +326,9 @@ document.getElementById("offers");
 
 let allProducts = [];
 
-
-
 let activeCategory = null;
+
+
 
 
 
@@ -366,6 +341,7 @@ let activeCategory = null;
 
 
 async function loadCategories(){
+
 
 
     if(!categoriesContainer) return;
@@ -385,7 +361,8 @@ async function loadCategories(){
 
 
 
-    snapshot.forEach((item)=>{
+
+    snapshot.forEach(item=>{
 
 
         const category = item.data();
@@ -394,6 +371,7 @@ async function loadCategories(){
 
 
         categoriesContainer.innerHTML += `
+
 
 
         <div class="category-card"
@@ -414,7 +392,9 @@ async function loadCategories(){
         `;
 
 
+
     });
+
 
 
 
@@ -425,14 +405,12 @@ async function loadCategories(){
     .forEach(card=>{
 
 
-
         card.addEventListener("click",()=>{
 
 
 
-            const categoryName =
+            const categoryName = card.dataset.category;
 
-            card.dataset.category;
 
 
 
@@ -440,9 +418,7 @@ async function loadCategories(){
             if(activeCategory === categoryName){
 
 
-
                 activeCategory=null;
-
 
 
                 document.querySelectorAll(".category-card")
@@ -452,13 +428,7 @@ async function loadCategories(){
                     item.classList.remove("active");
 
 
-                    item.querySelector("h3").innerHTML =
-
-                    item.dataset.category;
-
-
                 });
-
 
 
                 displayProducts(allProducts);
@@ -473,10 +443,7 @@ async function loadCategories(){
 
 
 
-
             activeCategory = categoryName;
-
-
 
 
 
@@ -488,27 +455,13 @@ async function loadCategories(){
                 item.classList.remove("active");
 
 
-                item.querySelector("h3").innerHTML =
-
-                item.dataset.category;
-
-
             });
 
 
 
 
 
-
             card.classList.add("active");
-
-
-
-            card.querySelector("h3").innerHTML =
-
-            categoryName + " ×";
-
-
 
 
 
@@ -550,15 +503,11 @@ async function loadProducts(){
 
 
 
-
     allProducts=[];
 
 
 
-
-
-    snapshot.forEach((item)=>{
-
+    snapshot.forEach(item=>{
 
 
         allProducts.push({
@@ -566,9 +515,7 @@ async function loadProducts(){
 
             id:item.id,
 
-
             ...item.data()
-
 
 
         });
@@ -593,6 +540,8 @@ async function loadProducts(){
 
 
 
+
+
 //==================================
 // DISPLAY PRODUCTS
 //==================================
@@ -601,10 +550,7 @@ async function loadProducts(){
 function displayProducts(products){
 
 
-
     if(!productsContainer) return;
-
-
 
 
 
@@ -614,10 +560,7 @@ function displayProducts(products){
 
 
 
-
-
     products.forEach(product=>{
-
 
 
         productsContainer.innerHTML += `
@@ -636,14 +579,11 @@ function displayProducts(products){
 
 
 
-
             <img
 
             src="${product.image || 'images/no-image.png'}"
 
             alt="${product.name}">
-
-
 
 
 
@@ -659,15 +599,11 @@ function displayProducts(products){
 
 
 
-
-
             <p>
 
             ${product.description || ""}
 
             </p>
-
-
 
 
 
@@ -683,15 +619,11 @@ function displayProducts(products){
 
 
 
-
-
             <button class="add-btn">
 
             Add
 
             </button>
-
-
 
 
 
@@ -715,8 +647,6 @@ function displayProducts(products){
 
 
 
-
-
 //==================================
 // FILTER PRODUCTS
 //==================================
@@ -729,14 +659,10 @@ function filterProducts(category){
     const filtered = allProducts.filter(product=>{
 
 
-
         return product.category === category;
 
 
-
     });
-
-
 
 
 
@@ -745,6 +671,8 @@ function filterProducts(category){
 
 
 }
+
+
 
 
 
@@ -766,10 +694,7 @@ async function loadOffers(){
 
 
 
-
     offersContainer.innerHTML="";
-
-
 
 
 
@@ -784,14 +709,11 @@ async function loadOffers(){
 
 
 
-
-
-    snapshot.forEach((item)=>{
+    snapshot.forEach(item=>{
 
 
 
         const offer = item.data();
-
 
 
 
@@ -805,15 +727,11 @@ async function loadOffers(){
 
 
 
-
-
             <img
 
             src="${offer.image || 'images/no-image.png'}"
 
             alt="${offer.name}">
-
-
 
 
 
@@ -829,8 +747,6 @@ async function loadOffers(){
 
 
 
-
-
             <p>
 
             ${offer.description || ""}
@@ -841,15 +757,11 @@ async function loadOffers(){
 
 
 
-
-
             <strong>
 
             ${offer.newPrice || offer.price} EGP
 
             </strong>
-
-
 
 
 
@@ -871,7 +783,8 @@ async function loadOffers(){
 //==================================
 
 
-let cart = [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
 
 
 
@@ -900,7 +813,6 @@ const cartCount = document.getElementById("cartCount");
 
 
 
-
 //==================================
 // OPEN / CLOSE CART
 //==================================
@@ -914,8 +826,11 @@ function openCartBox(){
 
         cartBox.classList.add("active");
 
-
         cartOverlay.classList.add("active");
+
+
+        // قفل الصفحة الخلفية
+        document.body.classList.add("cart-open");
 
 
     }
@@ -935,8 +850,11 @@ function closeCartBox(){
 
         cartBox.classList.remove("active");
 
-
         cartOverlay.classList.remove("active");
+
+
+        // رجوع سكرول الصفحة
+        document.body.classList.remove("cart-open");
 
 
     }
@@ -981,7 +899,6 @@ if(openCart){
 
 
 
-
 if(closeCart){
 
 
@@ -995,7 +912,6 @@ if(closeCart){
 
 
 }
-
 
 
 
@@ -1023,6 +939,7 @@ if(cartOverlay){
 
 
 
+
 //==================================
 // ADD TO CART
 //==================================
@@ -1032,22 +949,15 @@ function addToCart(product){
 
 
 
-    let item = cart.find((p)=>{
-
-
-        return p.id === product.id;
-
-
-    });
+    const exist = cart.find(item=>item.id === product.id);
 
 
 
 
+    if(exist){
 
-    if(item){
 
-
-        item.quantity += 1;
+        exist.quantity++;
 
 
     }else{
@@ -1056,17 +966,9 @@ function addToCart(product){
         cart.push({
 
 
-            id:product.id,
-
-
-            name:product.name,
-
-
-            price:Number(product.price),
-
+            ...product,
 
             quantity:1
-
 
 
         });
@@ -1078,18 +980,23 @@ function addToCart(product){
 
 
 
+
+    localStorage.setItem(
+
+        "cart",
+
+        JSON.stringify(cart)
+
+    );
+
+
+
+
     updateCart();
 
 
+
 }
-
-
-
-
-
-
-
-
 //==================================
 // UPDATE CART
 //==================================
@@ -1100,6 +1007,7 @@ function updateCart(){
 
 
     if(!cartItems) return;
+
 
 
 
@@ -1115,7 +1023,9 @@ function updateCart(){
 
 
 
+
     cart.forEach(item=>{
+
 
 
         total += item.price * item.quantity;
@@ -1127,13 +1037,17 @@ function updateCart(){
 
 
 
+
         cartItems.innerHTML += `
+
 
 
         <div class="cart-item">
 
 
+
             <div>
+
 
 
                 <h4>
@@ -1141,6 +1055,7 @@ function updateCart(){
                 ${item.name}
 
                 </h4>
+
 
 
 
@@ -1153,7 +1068,9 @@ function updateCart(){
                 </span>
 
 
+
             </div>
+
 
 
 
@@ -1168,7 +1085,9 @@ function updateCart(){
 
 
 
+
         </div>
+
 
 
         `;
@@ -1194,7 +1113,6 @@ function updateCart(){
 
 
 
-
     if(cartCount){
 
 
@@ -1213,14 +1131,12 @@ function updateCart(){
 
 
 
-
-
 //==================================
 // REMOVE FROM CART
 //==================================
 
 
-window.removeFromCart=function(id){
+window.removeFromCart = function(id){
 
 
 
@@ -1234,12 +1150,26 @@ window.removeFromCart=function(id){
 
 
 
+
+
+
+    localStorage.setItem(
+
+        "cart",
+
+        JSON.stringify(cart)
+
+    );
+
+
+
+
+
     updateCart();
 
 
 
 };
-
 
 
 
@@ -1292,7 +1222,6 @@ document.addEventListener("click",(e)=>{
     }
 
 
-
 });
 
 
@@ -1315,6 +1244,7 @@ const checkoutBtn = document.getElementById("checkoutBtn");
 if(checkoutBtn){
 
 
+
     checkoutBtn.addEventListener("click",()=>{
 
 
@@ -1322,7 +1252,8 @@ if(checkoutBtn){
         if(cart.length === 0){
 
 
-            alert("Your cart is empty");
+
+            showNotification("Your cart is empty");
 
 
             return;
@@ -1332,14 +1263,29 @@ if(checkoutBtn){
 
 
 
-        alert("Order Ready");
 
 
-        console.log(cart);
+
+        localStorage.setItem(
+
+            "cart",
+
+            JSON.stringify(cart)
+
+        );
+
+
+
+
+
+
+        window.location.href="checkout.html";
+
 
 
 
     });
+
 
 
 }
@@ -1349,18 +1295,12 @@ if(checkoutBtn){
 
 
 
-        console.log("Customer Order:",cart);
+//==================================
+// LOAD SAVED CART
+//==================================
 
 
-
-
-
-        alert("Order Ready");
-
-
-
-
-
+updateCart();
 
 
 
@@ -1376,8 +1316,41 @@ if(checkoutBtn){
 
 loadCategories();
 
-
 loadProducts();
 
-
 loadOffers();
+//==================================
+// APP NOTIFICATION SYSTEM
+//==================================
+
+window.showNotification = function(message,type="normal"){
+
+
+const box = document.getElementById("appNotification");
+
+const text = document.getElementById("notificationText");
+
+
+if(!box || !text) return;
+
+
+
+text.innerText = message;
+
+
+
+box.className="app-notification show";
+
+
+
+setTimeout(()=>{
+
+
+box.classList.remove("show");
+
+
+},3000);
+
+
+
+}
