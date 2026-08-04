@@ -1745,3 +1745,825 @@ footer p{
     margin-bottom:25px;
 
 }
+/*==================================
+      CREPE STATION UI ENHANCEMENT
+      PART 1
+==================================*/
+
+
+/* منع أي سحب جانبي */
+
+html,
+body{
+
+    overflow-x:hidden;
+
+}
+
+
+/* تحسين تحديد العناصر */
+
+*{
+
+    -webkit-user-select:none;
+
+    user-select:none;
+
+}
+
+
+input,
+textarea{
+
+    -webkit-user-select:text;
+
+    user-select:text;
+
+}
+
+
+
+/*==================================
+        CUSTOM SCROLLBAR
+==================================*/
+
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+    height:8px;
+
+}
+
+
+::-webkit-scrollbar-track{
+
+    background:#16252D;
+
+}
+
+
+
+::-webkit-scrollbar-thumb{
+
+    background:#F2C230;
+
+    border-radius:20px;
+
+}
+
+
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#d4af37;
+
+}
+
+
+
+/* Firefox */
+
+*{
+
+    scrollbar-width:thin;
+
+    scrollbar-color:#F2C230 #16252D;
+
+}
+
+
+
+
+
+/*==================================
+        TOAST NOTIFICATION
+==================================*/
+
+
+.toast,
+.mobile-toast{
+
+
+    position:fixed;
+
+
+    top:25px;
+
+
+    left:50%;
+
+
+    transform:
+    translate(-50%,-150px);
+
+
+
+    min-width:280px;
+
+
+    max-width:90%;
+
+
+    padding:18px 25px;
+
+
+    background:rgba(16,23,27,.95);
+
+
+
+    backdrop-filter:blur(20px);
+
+
+    border:1px solid rgba(242,194,48,.35);
+
+
+
+    border-radius:20px;
+
+
+    color:white;
+
+
+    text-align:center;
+
+
+    z-index:9999;
+
+
+
+    box-shadow:
+
+    0 15px 40px rgba(0,0,0,.45);
+
+
+
+    transition:.45s ease;
+
+
+
+}
+
+
+
+
+.toast.show,
+.mobile-toast.show{
+
+
+    transform:
+
+    translate(-50%,0);
+
+
+
+}
+
+
+
+.toast strong,
+.mobile-toast strong{
+
+
+    color:#F2C230;
+
+
+    font-size:17px;
+
+
+}
+
+
+
+
+.toast span,
+.mobile-toast span{
+
+
+    color:#ddd;
+
+
+    font-size:14px;
+
+
+}
+
+
+
+
+
+/*==================================
+        POPUP IMPROVEMENT
+==================================*/
+
+
+.cart-box,
+.popup,
+.modal,
+.orders-popup,
+.details-popup,
+.cancelled-popup{
+
+
+    animation:
+
+    popupShow .35s ease;
+
+
+
+}
+
+
+
+@keyframes popupShow{
+
+
+from{
+
+    opacity:0;
+
+    transform:scale(.85) translateY(30px);
+
+}
+
+
+to{
+
+    opacity:1;
+
+    transform:scale(1) translateY(0);
+
+}
+
+
+}
+
+
+
+
+
+
+
+/*==================================
+        CARD EFFECT
+==================================*/
+
+
+.menu-card,
+.category-card,
+.coming-soon{
+
+
+    transition:.35s ease;
+
+
+}
+
+
+
+.menu-card:hover,
+.category-card:hover,
+.coming-soon:hover{
+
+
+    box-shadow:
+
+    0 15px 35px rgba(0,0,0,.35);
+
+
+
+}
+
+
+
+
+
+/*==================================
+        BUTTON PRESS EFFECT
+==================================*/
+
+
+button:active,
+a:active{
+
+
+    transform:scale(.96);
+
+
+}
+
+
+
+
+/*==================================
+        MOBILE TOUCH FIX
+==================================*/
+
+
+@media(max-width:600px){
+
+
+.toast,
+.mobile-toast{
+
+
+    top:15px;
+
+
+    min-width:90%;
+
+
+    padding:15px;
+
+
+}
+
+
+
+}
+/*==================================
+      REAL UI IMPROVEMENTS
+==================================*/
+
+
+/* منع أي Scroll أفقي */
+
+body{
+    overflow-x:hidden !important;
+}
+
+
+/* تحسين الكروت */
+
+.menu-card{
+
+    border:1px solid rgba(255,255,255,.05);
+
+}
+
+
+.menu-card:hover{
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.45);
+
+}
+
+
+
+/* تحسين زر الطلب */
+
+.add-btn,
+.order-btn-main,
+#checkoutBtn{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+.add-btn:active,
+.order-btn-main:active,
+#checkoutBtn:active{
+
+    transform:scale(.95);
+
+}
+
+
+
+
+/* تحسين السلة */
+
+.cart-box{
+
+    box-shadow:
+
+    -15px 0 40px rgba(0,0,0,.5);
+
+
+}
+
+
+
+.cart-item{
+
+    border:
+
+    1px solid rgba(242,194,48,.15);
+
+}
+
+
+
+
+/* خلفية Popup لو ظهر */
+
+.cart-overlay{
+
+    backdrop-filter:blur(8px);
+
+}
+
+
+
+
+
+/* إلغاء الشكل الأزرق للضغط على الموبايل */
+
+*{
+
+    -webkit-tap-highlight-color:transparent;
+
+}
+
+
+
+
+/* تحسين الـ scrollbar */
+
+::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+
+::-webkit-scrollbar-thumb{
+
+    background:#F2C230;
+
+    border-radius:50px;
+
+}
+
+
+::-webkit-scrollbar-track{
+
+    background:#16252D;
+
+}
+/*==============================
+      APP NOTIFICATION
+==============================*/
+
+.app-notification{
+
+    position:fixed;
+
+    top:20px;
+
+    left:50%;
+
+    transform:translate(-50%,-150px);
+
+    width:90%;
+
+    max-width:380px;
+
+    padding:16px 20px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    background:#10171B;
+
+    color:white;
+
+    border:1px solid rgba(242,194,48,.4);
+
+    border-radius:22px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.45);
+
+    z-index:99999;
+
+    transition:.45s ease;
+
+}
+
+
+.app-notification.show{
+
+    transform:translate(-50%,0);
+
+}
+
+
+
+.app-notification i{
+
+    color:#F2C230;
+
+    font-size:22px;
+
+}
+
+
+#notificationText{
+
+    font-size:14px;
+
+}
+/*==============================
+      FIX CART SCROLL
+==============================*/
+
+
+.cart-box{
+
+    position:fixed;
+
+    top:0;
+
+    right:-420px;
+
+    width:380px;
+
+    height:100vh;
+
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
+    z-index:9999;
+
+}
+
+
+
+.cart-box.active{
+
+    right:0;
+
+}
+
+
+
+.cart-items{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+    padding-right:5px;
+
+}
+
+
+
+/* منع الصفحة من التحرك عند فتح الكارت */
+
+body.cart-open{
+
+    overflow:hidden;
+
+}
+
+
+
+.cart-footer{
+
+    flex-shrink:0;
+
+}
+/*==================================
+        BOTTOM CART STYLE
+==================================*/
+
+
+.cart-box{
+
+    position:fixed;
+
+    left:0;
+
+    bottom:-100%;
+
+    top:auto;
+
+    width:100%;
+
+    height:75vh;
+
+
+    background:#101820;
+
+
+    border-radius:35px 35px 0 0;
+
+
+    padding:25px;
+
+
+    z-index:9999;
+
+
+    display:flex;
+
+    flex-direction:column;
+
+
+    box-shadow:
+
+    0 -20px 50px rgba(0,0,0,.45);
+
+
+    transition:.45s ease;
+
+
+}
+
+
+
+/* فتح الكارت */
+
+.cart-box.active{
+
+    bottom:0;
+
+    right:0;
+
+}
+
+
+
+
+
+.cart-overlay{
+
+    background:
+
+    rgba(0,0,0,.45);
+
+
+    backdrop-filter:blur(8px);
+
+
+    -webkit-backdrop-filter:blur(8px);
+
+}
+
+
+
+/* مكان المنتجات داخل الكارت */
+
+.cart-items{
+
+    flex:1;
+
+    overflow-y:auto;
+
+}
+
+
+
+
+
+/* شكل رأس الكارت */
+
+.cart-header{
+
+    padding-bottom:15px;
+
+    border-bottom:
+
+    1px solid rgba(255,255,255,.15);
+
+}
+
+
+
+.cart-header h3{
+
+    color:#F2C230;
+
+    font-size:24px;
+
+}
+
+
+
+
+/* زر القفل */
+
+.cart-header i{
+
+    width:42px;
+
+    height:42px;
+
+    background:#1B2E37;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+
+/* الفوتر ثابت تحت */
+
+.cart-footer{
+
+    flex-shrink:0;
+
+}
+
+
+
+/* للموبايل */
+
+@media(max-width:600px){
+
+.cart-box{
+
+    height:75vh;
+
+}
+
+}
+/*==================================
+      LOCK PAGE WHEN CART OPEN
+==================================*/
+
+body.cart-open{
+
+    overflow:hidden;
+
+    height:100vh;
+
+}
+
+
+/* Scroll داخل الكارت فقط */
+
+.cart-box{
+
+    overflow:hidden;
+
+}
+
+
+
+.cart-items{
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+    flex:1;
+
+    padding-right:5px;
+
+}
+
+
+
+/* منع سكرول الصفحة خلف الكارت */
+
+.cart-overlay{
+
+    touch-action:none;
+
+}
+body.cart-open{
+
+    overflow:hidden;
+
+    height:100vh;
+
+}
+
+
+
+.cart-box{
+
+    overflow:hidden;
+
+}
+
+
+
+.cart-items{
+
+    overflow-y:auto;
+
+    flex:1;
+
+}

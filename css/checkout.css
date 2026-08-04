@@ -1,0 +1,813 @@
+/*==================================
+        CHECKOUT STYLE
+==================================*/
+
+
+.checkout-section{
+
+    min-height:100vh;
+
+    padding:130px 0 70px;
+
+    background:#16252D;
+
+}
+
+
+
+
+
+.checkout-box,
+.customer-box{
+
+
+    background:#1B2E37;
+
+    border-radius:25px;
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+
+    border:1px solid rgba(242,194,48,.15);
+
+}
+
+
+
+
+.checkout-box h3,
+.customer-box h3{
+
+
+    color:#F2C230;
+
+    margin-bottom:20px;
+
+    font-size:22px;
+
+
+}
+
+
+
+
+
+.checkout-item{
+
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:#16252D;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    margin-bottom:12px;
+
+
+}
+
+
+
+
+
+.checkout-item h4{
+
+
+    color:white;
+
+    font-size:16px;
+
+
+}
+
+
+
+
+.checkout-item span,
+.checkout-total{
+
+
+    color:#F2C230;
+
+    font-weight:700;
+
+
+}
+
+
+
+
+
+.checkout-total{
+
+
+    margin-top:20px;
+
+    font-size:20px;
+
+    border-top:1px solid rgba(255,255,255,.1);
+
+    padding-top:15px;
+
+
+}
+
+
+
+
+
+
+
+.customer-box input,
+.customer-box textarea{
+
+
+    width:100%;
+
+    background:#16252D;
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    padding:15px;
+
+    border-radius:15px;
+
+    margin-bottom:15px;
+
+    font-size:15px;
+
+
+}
+
+
+
+
+
+.customer-box textarea{
+
+
+    height:120px;
+
+    resize:none;
+
+
+}
+
+
+
+
+
+
+#confirmOrder{
+
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:35px;
+
+    background:#F2C230;
+
+    color:#111;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+
+}
+
+
+
+
+
+#confirmOrder:hover{
+
+
+    transform:translateY(-3px);
+
+    background:#d4af37;
+
+
+}
+
+
+
+
+
+
+@media(max-width:600px){
+
+
+.checkout-box,
+.customer-box{
+
+
+    padding:18px;
+
+    border-radius:18px;
+
+
+}
+
+
+
+.checkout-section{
+
+
+    padding-top:110px;
+
+
+}
+
+
+
+}
+/*==================================
+        EXTRAS SYSTEM
+==================================*/
+
+
+.product-extra-box{
+
+    margin-top:12px;
+
+    width:100%;
+
+}
+
+
+
+.add-product-extra,
+.add-order-extra{
+
+
+    width:100%;
+
+    padding:10px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#F2C230;
+
+    color:#111;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+
+}
+
+
+
+.add-product-extra:hover,
+.add-order-extra:hover{
+
+
+    transform:translateY(-2px);
+
+    background:#d4af37;
+
+
+}
+
+
+
+
+
+.selected-extra{
+
+
+    color:#F2C230;
+
+    font-size:13px;
+
+    margin:5px 0;
+
+
+}
+
+
+
+
+
+.order-extra-section{
+
+
+    margin-top:20px;
+
+
+}
+
+
+
+
+
+/*=========================
+        EXTRAS POPUP
+=========================*/
+
+
+#extrasPopup{
+
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.75);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+
+}
+
+
+
+
+
+.extras-popup{
+
+
+    width:90%;
+
+    max-width:600px;
+
+    max-height:80vh;
+
+    overflow-y:auto;
+
+    background:#1B2E37;
+
+    border-radius:25px;
+
+    padding:25px;
+
+    border:1px solid rgba(242,194,48,.2);
+
+
+}
+
+
+
+
+
+.extras-popup h2{
+
+
+    text-align:center;
+
+    color:#F2C230;
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+
+
+.extra-option{
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+    background:#16252D;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    margin-bottom:12px;
+
+}
+
+
+
+
+
+.extra-option span{
+
+
+    flex:1;
+
+    color:white;
+
+
+}
+
+
+
+
+
+.extra-option b{
+
+
+    color:#F2C230;
+
+
+}
+
+
+
+
+
+.extra-option input{
+
+
+    width:20px;
+
+    height:20px;
+
+
+}
+
+
+
+
+
+.extras-popup button{
+
+
+    width:100%;
+
+    margin-top:15px;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#F2C230;
+
+    color:#111;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+
+}
+
+
+
+
+
+@media(max-width:600px){
+
+
+.extras-popup{
+
+
+    width:95%;
+
+    padding:18px;
+
+
+}
+
+
+}
+/*==================================
+        PRODUCT NOTE
+==================================*/
+
+
+.product-note{
+
+    width:100%;
+
+    margin-top:12px;
+
+    min-height:70px;
+
+    resize:none;
+
+    padding:12px;
+
+    border-radius:15px;
+
+    border:1px solid rgba(242,194,48,.15);
+
+    background:#16252D;
+
+    color:white;
+
+    font-size:14px;
+
+    outline:none;
+
+    font-family:"Poppins",sans-serif;
+
+}
+
+
+
+.product-note::placeholder{
+
+    color:rgba(255,255,255,.5);
+
+}
+
+
+
+.product-note:focus{
+
+    border-color:#F2C230;
+
+}
+/*==================================
+        CHECKOUT ENHANCEMENTS
+==================================*/
+
+
+.checkout-box,
+.customer-box{
+
+
+    backdrop-filter:blur(15px);
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(255,255,255,.08),
+    rgba(255,255,255,.03)
+    );
+
+
+}
+
+
+
+.checkout-item{
+
+
+    transition:.3s;
+
+}
+
+
+
+.checkout-item:hover{
+
+
+    transform:translateY(-3px);
+
+    background:#20343D;
+
+
+}
+
+
+
+
+/*=========================
+        POPUP IMPROVE
+=========================*/
+
+
+.extras-popup{
+
+
+    box-shadow:
+    0 25px 70px rgba(0,0,0,.6);
+
+
+    animation:popupShow .35s ease;
+
+
+}
+
+
+
+@keyframes popupShow{
+
+
+from{
+
+opacity:0;
+
+transform:scale(.8) translateY(30px);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:scale(1) translateY(0);
+
+}
+
+
+}
+
+
+
+
+
+
+/*=========================
+        APP NOTIFICATION
+=========================*/
+
+
+.app-notification{
+
+
+    position:fixed;
+
+    top:-120px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:90%;
+
+    max-width:380px;
+
+    padding:18px 22px;
+
+    border-radius:22px;
+
+
+    background:
+    rgba(27,46,55,.95);
+
+
+    backdrop-filter:blur(20px);
+
+
+    border:
+
+    1px solid rgba(242,194,48,.35);
+
+
+    color:white;
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+
+    z-index:99999;
+
+
+    box-shadow:
+
+    0 20px 50px rgba(0,0,0,.5);
+
+
+    transition:.4s;
+
+
+}
+
+
+
+.app-notification i{
+
+
+    color:#F2C230;
+
+    font-size:22px;
+
+
+}
+
+
+
+.app-notification.show{
+
+
+    top:25px;
+
+
+}
+
+
+
+
+
+
+/*=========================
+ REMOVE BLUE SCROLL
+=========================*/
+
+
+*{
+
+
+scrollbar-width:thin;
+
+scrollbar-color:#F2C230 #16252D;
+
+
+}
+
+
+
+::-webkit-scrollbar{
+
+
+width:8px;
+
+
+}
+
+
+
+::-webkit-scrollbar-track{
+
+
+background:#16252D;
+
+
+}
+
+
+
+::-webkit-scrollbar-thumb{
+
+
+background:#F2C230;
+
+border-radius:20px;
+
+
+}
+
+
+
+
+
+
+@media(max-width:600px){
+
+
+
+.app-notification{
+
+
+    width:94%;
+
+    padding:15px;
+
+
+}
+
+
+
+.checkout-item{
+
+
+    font-size:13px;
+
+
+}
+
+
+
+}

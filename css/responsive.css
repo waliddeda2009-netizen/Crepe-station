@@ -1,0 +1,1412 @@
+/*
+==================================
+ CREPE STATION GLOBAL RESPONSIVE
+ VERSION 1.0
+==================================
+*/
+
+
+/* ==============================
+   GLOBAL RESET
+============================== */
+
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+
+button,
+input,
+textarea,
+select{
+    max-width:100%;
+}
+
+
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+
+body{
+    overflow-x:hidden;
+}
+
+
+
+
+
+/* ==============================
+   LARGE SCREENS
+   1200px+
+============================== */
+
+
+@media(min-width:1200px){
+
+
+    .container{
+
+        width:90%;
+        max-width:1400px;
+        margin:auto;
+
+    }
+
+
+
+    .grid{
+
+        display:grid;
+        gap:25px;
+
+    }
+
+
+}
+
+
+
+
+
+/* ==============================
+   LAPTOP
+   1000px - 1199px
+============================== */
+
+
+@media(max-width:1199px){
+
+
+
+    .container{
+
+        width:92%;
+        margin:auto;
+
+    }
+
+
+
+    .grid{
+
+        gap:18px;
+
+    }
+
+
+
+    .sidebar{
+
+        width:220px;
+
+    }
+
+
+
+    .main-content{
+
+        margin-left:220px;
+
+    }
+
+
+}
+
+
+
+
+
+/* ==============================
+   TABLET
+   768px - 999px
+============================== */
+
+
+@media(max-width:999px){
+
+
+
+    .container{
+
+        width:95%;
+
+    }
+
+
+
+    .sidebar{
+
+        width:85px;
+
+        padding:15px 8px;
+
+    }
+
+
+
+    .sidebar span{
+
+        display:none;
+
+    }
+
+
+
+    .sidebar nav a{
+
+        justify-content:center;
+
+        padding:0;
+
+    }
+
+
+
+    .main-content{
+
+        margin-left:85px;
+
+    }
+
+
+
+    .grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+
+    .popup,
+    .modal{
+
+        width:90%;
+
+    }
+
+
+}
+
+
+
+
+
+/* ==============================
+   MOBILE
+   600px - 767px
+============================== */
+
+
+@media(max-width:767px){
+
+
+
+    .container{
+
+        width:96%;
+
+    }
+
+
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+
+    .sidebar{
+
+        width:65px;
+
+    }
+
+
+
+    .main-content{
+
+        margin-left:65px;
+
+    }
+
+
+
+    .topbar{
+
+        padding:0 12px;
+
+    }
+
+
+
+    .logo{
+
+        font-size:18px;
+
+    }
+
+
+
+    .popup,
+    .modal{
+
+        width:95%;
+
+        max-height:90vh;
+
+        overflow:auto;
+
+    }
+
+
+
+    button{
+
+        min-height:44px;
+
+    }
+
+
+}
+
+
+
+
+
+
+/* ==============================
+   CARDS & PRODUCTS
+============================== */
+
+
+.card,
+.product-card,
+.status-card{
+
+
+    width:100%;
+
+    max-width:100%;
+
+}
+
+
+
+.cards-container,
+.products-grid{
+
+
+    display:grid;
+
+    gap:20px;
+
+}
+
+
+
+
+@media(min-width:1200px){
+
+
+.cards-container,
+.products-grid{
+
+
+    grid-template-columns:repeat(4,1fr);
+
+
+}
+
+
+}
+
+
+
+
+
+@media(max-width:1199px){
+
+
+.cards-container,
+.products-grid{
+
+
+    grid-template-columns:repeat(3,1fr);
+
+
+}
+
+
+}
+
+
+
+
+
+@media(max-width:900px){
+
+
+.cards-container,
+.products-grid{
+
+
+    grid-template-columns:repeat(2,1fr);
+
+
+}
+
+
+}
+
+
+
+
+
+@media(max-width:600px){
+
+
+.cards-container,
+.products-grid{
+
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:12px;
+
+
+}
+
+
+
+.card,
+.product-card{
+
+
+    border-radius:18px;
+
+
+}
+
+
+}
+
+
+
+
+
+@media(max-width:380px){
+
+
+.cards-container,
+.products-grid{
+
+
+    grid-template-columns:1fr;
+
+
+}
+
+
+}
+
+
+
+
+
+
+/* ==============================
+   FORMS
+============================== */
+
+
+.form-container{
+
+    width:100%;
+
+}
+
+
+
+.form-row{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+
+
+@media(max-width:700px){
+
+
+
+.form-row{
+
+    flex-direction:column;
+
+}
+
+
+
+input,
+textarea,
+select{
+
+    width:100%;
+
+}
+
+
+}
+
+
+
+
+
+
+/* ==============================
+   TABLE RESPONSIVE
+============================== */
+
+
+.table-container{
+
+    width:100%;
+
+    overflow-x:auto;
+
+}
+
+
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+
+
+@media(max-width:700px){
+
+
+table{
+
+    min-width:600px;
+
+}
+
+
+}
+
+
+
+
+
+
+/* ==============================
+   BUTTONS
+============================== */
+
+
+.btn,
+button{
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+@media(max-width:600px){
+
+
+.btn,
+button{
+
+    width:100%;
+
+}
+
+
+}
+
+
+
+
+
+
+/* ==============================
+   POPUPS / MODALS
+============================== */
+
+
+.overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:15px;
+
+}
+
+
+
+.popup,
+.modal{
+
+    max-width:600px;
+
+    width:95%;
+
+}
+
+
+
+@media(max-width:400px){
+
+
+.popup,
+.modal{
+
+    width:98%;
+
+    border-radius:18px;
+
+}
+
+
+}
+
+
+
+
+
+
+/* ==============================
+   TEXT RESPONSIVE
+============================== */
+
+
+h1{
+
+font-size:clamp(24px,4vw,40px);
+
+}
+
+
+
+h2{
+
+font-size:clamp(20px,3vw,30px);
+
+}
+
+
+
+h3{
+
+font-size:clamp(16px,2vw,22px);
+
+}
+
+
+
+p,
+span{
+
+font-size:clamp(13px,1.5vw,16px);
+
+}
+/* ==============================
+   ADMIN DASHBOARD RESPONSIVE
+============================== */
+
+
+.dashboard,
+.admin-container,
+.page-container{
+
+    width:100%;
+
+}
+
+
+
+
+@media(max-width:900px){
+
+
+.dashboard,
+.admin-container,
+.page-container{
+
+    padding:15px;
+
+}
+
+
+}
+
+
+
+
+
+
+
+/* ==============================
+   SIDEBAR GLOBAL FIX
+============================== */
+
+
+.sidebar{
+
+    transition:.3s;
+
+}
+
+
+
+.sidebar nav a{
+
+    white-space:nowrap;
+
+}
+
+
+
+@media(max-width:999px){
+
+
+.sidebar-logo img{
+
+    max-width:65px;
+
+}
+
+
+
+.sidebar nav a{
+
+    justify-content:center;
+
+    padding:0;
+
+}
+
+
+
+.sidebar nav span{
+
+    display:none;
+
+}
+
+
+}
+
+
+
+
+@media(max-width:600px){
+
+
+
+.sidebar{
+
+    width:65px;
+
+}
+
+
+
+.sidebar-logo img{
+
+    width:45px;
+
+}
+
+
+
+.sidebar nav a{
+
+    height:55px;
+
+    border-radius:15px;
+
+}
+
+
+
+.sidebar nav i{
+
+    font-size:20px;
+
+}
+
+
+
+.main-content{
+
+    margin-left:65px;
+
+}
+
+
+}
+
+
+
+
+
+
+
+/* ==============================
+   TOP BAR
+============================== */
+
+
+.topbar{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+}
+
+
+
+@media(max-width:600px){
+
+
+.topbar{
+
+    flex-wrap:wrap;
+
+    height:auto;
+
+    min-height:65px;
+
+    padding:12px;
+
+}
+
+
+
+.home-btn{
+
+    padding:8px 12px;
+
+    font-size:13px;
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+/* ==============================
+   POS RESPONSIVE
+============================== */
+
+
+.pos-container{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:20px;
+
+}
+
+
+
+
+
+.products-area{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:15px;
+
+}
+
+
+
+
+
+.cart-area{
+
+    width:100%;
+
+}
+
+
+
+
+
+@media(max-width:1000px){
+
+
+
+.pos-container{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.products-area{
+
+    grid-template-columns:repeat(3,1fr);
+
+}
+
+
+
+}
+
+
+
+
+
+
+@media(max-width:600px){
+
+
+
+.products-area{
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:10px;
+
+}
+
+
+
+.cart-area{
+
+    margin-top:15px;
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+/* ==============================
+   ORDER DETAILS RESPONSIVE
+============================== */
+
+
+.details-popup,
+.orders-popup,
+.cancelled-popup{
+
+    overflow-y:auto;
+
+    -webkit-overflow-scrolling:touch;
+
+}
+
+
+
+.detail-box,
+.total-box{
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+}
+
+
+
+
+@media(max-width:500px){
+
+
+.detail-box,
+.total-box{
+
+    font-size:13px;
+
+    padding:12px;
+
+}
+
+
+
+.item{
+
+    font-size:13px;
+
+}
+
+
+}
+
+
+
+
+
+
+
+/* ==============================
+   ADMIN BUTTONS
+============================== */
+
+
+.action-buttons{
+
+    display:flex;
+
+    gap:12px;
+
+}
+
+
+
+@media(max-width:600px){
+
+
+.action-buttons{
+
+    flex-direction:column;
+
+}
+
+
+
+.action-buttons button{
+
+    width:100%;
+
+}
+
+
+}
+
+
+
+
+
+
+
+/* ==============================
+   FIREBASE TABLES
+============================== */
+
+
+.data-box{
+
+    width:100%;
+
+    overflow:hidden;
+
+}
+
+
+
+@media(max-width:700px){
+
+
+.data-box{
+
+    overflow-x:auto;
+
+}
+
+
+}
+
+
+
+
+
+
+
+/* ==============================
+   MOBILE SAFE AREA
+============================== */
+
+
+@media(max-width:600px){
+
+
+body{
+
+    padding-bottom:10px;
+
+}
+
+
+
+img{
+
+    object-fit:contain;
+
+}
+
+
+
+input,
+textarea,
+select{
+
+    font-size:16px;
+
+}
+
+
+}
+/* ==============================
+   LARGE 2K / 4K SCREENS
+============================== */
+
+
+@media(min-width:1600px){
+
+
+.container,
+.dashboard,
+.page-container{
+
+    max-width:1600px;
+
+    margin:auto;
+
+}
+
+
+
+.status-card,
+.card,
+.product-card{
+
+    min-height:120px;
+
+}
+
+
+
+.logo{
+
+    font-size:32px;
+
+}
+
+
+}
+
+
+
+
+
+
+
+/* ==============================
+   LANDSCAPE MOBILE
+============================== */
+
+
+@media(max-width:900px) and (orientation:landscape){
+
+
+
+.sidebar{
+
+    width:70px;
+
+}
+
+
+
+.main-content{
+
+    margin-left:70px;
+
+}
+
+
+
+.status-list{
+
+    gap:10px;
+
+}
+
+
+
+.status-card{
+
+    height:85px;
+
+}
+
+
+
+.popup,
+.modal{
+
+    max-height:80vh;
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+/* ==============================
+   VERY SMALL DEVICES
+   320px
+============================== */
+
+
+@media(max-width:320px){
+
+
+
+.sidebar{
+
+    width:55px;
+
+}
+
+
+
+.main-content{
+
+    margin-left:55px;
+
+}
+
+
+
+.sidebar nav i{
+
+    font-size:18px;
+
+}
+
+
+
+.topbar .logo{
+
+    font-size:16px;
+
+}
+
+
+
+.status-card{
+
+    padding:0 10px;
+
+}
+
+
+
+.status-number{
+
+    font-size:28px;
+
+}
+
+
+
+.status-name{
+
+    font-size:12px;
+
+}
+
+
+
+.popup,
+.modal{
+
+    padding:12px;
+
+}
+
+
+}
+
+
+
+
+
+
+
+/* ==============================
+   TOUCH DEVICES
+============================== */
+
+
+@media(pointer:coarse){
+
+
+
+button,
+.btn,
+.sidebar nav a,
+.card,
+.product-card{
+
+
+    -webkit-tap-highlight-color:transparent;
+
+}
+
+
+
+button:active,
+.btn:active,
+.card:active{
+
+
+    transform:scale(.97);
+
+}
+
+
+}
+
+
+
+
+
+
+
+/* ==============================
+   PREVENT OVERFLOW
+============================== */
+
+
+*{
+
+    max-width:100%;
+
+}
+
+
+
+.row,
+.flex{
+
+    flex-wrap:wrap;
+
+}
+
+
+
+.text{
+
+    overflow-wrap:break-word;
+
+}
+
+
+
+
+
+/* ==============================
+   SMOOTH ANIMATION
+============================== */
+
+
+@media(prefers-reduced-motion:no-preference){
+
+
+*{
+
+    scroll-behavior:smooth;
+
+}
+
+
+}
+
+
+
+
+
+
+/* ==============================
+   DARK MOBILE FIX
+============================== */
+
+
+@media(max-width:600px){
+
+
+.popup,
+.modal,
+.orders-popup,
+.details-popup{
+
+    backdrop-filter:blur(15px);
+
+}
+
+
+
+input,
+textarea,
+select{
+
+
+    border-radius:12px;
+
+}
+
+
+}

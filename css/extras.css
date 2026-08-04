@@ -758,3 +758,29 @@ a{
 
 
 }
+/*=========================
+        EXTRA TYPE SELECT
+=========================*/
+
+
+#extraType{
+
+    padding:12px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:10px;
+
+    font-size:14px;
+
+    font-family:"Poppins",sans-serif;
+
+    cursor:pointer;
+
+    background:white;
+
+    color:#111;
+
+}
