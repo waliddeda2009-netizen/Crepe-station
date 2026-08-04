@@ -544,33 +544,34 @@ order.remainingTime ?? order.preparingTime,
 else if(order.status==="Delivery"){
 
 
-
 statusIcon.innerHTML=
-
 `
-
 <i class="fa-solid fa-motorcycle"></i>
-
 `;
 
 
-
 statusTitle.innerText=
-
 "On The Way";
 
 
-
 statusMessage.innerText=
-
 "Your order is with delivery driver.";
 
 
+// إخفاء العداد القديم
+clearTimer();
+
+customerTimer.innerText="";
+
+if(timerTitle){
+
+timerTitle.innerText="";
+
+}
 
 
-
+// عرض الوقت المتوقع فقط
 if(order.deliveryTime){
-
 
 
 deliveryTime.innerText=
@@ -594,20 +595,15 @@ order.deliveryTime.to
 " Minutes";
 
 
+}else{
+
+
+deliveryTime.innerText=
+
+"Expected Delivery : 25 - 40 Minutes";
+
 
 }
-
-
-
-
-
-startCustomerTimer(
-
-order.remainingTime ?? order.deliveryRemainingTime,
-
-"Delivery Time"
-
-);
 
 
 
