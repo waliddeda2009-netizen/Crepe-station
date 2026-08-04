@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Crepe Station Admin Orders</title>
+
+<link rel="stylesheet" href="css/admin-orders.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+
+
+<body>
+
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+<div class="sidebar-logo">
+<img src="images/logo.png" alt="Crepe Station">
+</div>
+
+
+<nav>
+
+
+<a href="order-history.html">
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+<span>
+Order History
+</span>
+
+</a>
+
+
+
+<a href="#" id="cancelledBtn">
+
+<i class="fa-solid fa-ban"></i>
+
+<span>
+Cancelled Orders
+</span>
+
+<b id="cancelCount" class="hidden">
+0
+</b>
+
+</a>
+
+
+
+<a href="#" id="howToUseBtn">
+
+<i class="fa-solid fa-circle-question"></i>
+
+<span>
+How To Use Kitchen
+</span>
+
+</a>
+
+
+
+</nav>
+
+</aside>
+
+
+
+
+
+<!-- MAIN -->
+
+<div class="main-content">
+
+
+<header class="topbar">
+
+<div class="logo">
+Admin Orders
+</div>
+
+
+<a href="index.html" class="home-btn">
+
+<i class="fa-solid fa-house"></i>
+
+Website
+
+</a>
+
+
+</header>
+
+
+
+
+
+<main class="dashboard">
+
+
+
+<!-- STATUS BOXES -->
+
+<section class="status-list">
+
+
+<div class="status-card accept" id="acceptBox">
+
+<div class="status-icon">
+🆕
+</div>
+
+<div class="status-number" id="acceptCount">
+0
+</div>
+
+<div class="status-name">
+ACCEPT
+</div>
+
+</div>
+
+
+
+
+<div class="status-card ready" id="readyBox">
+
+<div class="status-icon">
+👨‍🍳
+</div>
+
+<div class="status-number" id="readyCount">
+0
+</div>
+
+<div class="status-name">
+READY
+</div>
+
+</div>
+
+
+
+
+<div class="status-card delivery" id="deliveryBox">
+
+<div class="status-icon">
+🛵
+</div>
+
+<div class="status-number" id="deliveryCount">
+0
+</div>
+
+<div class="status-name">
+DELIVERY
+</div>
+
+</div>
+
+
+
+
+<div class="status-card delivered" id="deliveredBox">
+
+<div class="status-icon">
+📦
+</div>
+
+<div class="status-number" id="deliveredCount">
+0
+</div>
+
+<div class="status-name">
+DELIVERED
+</div>
+
+</div>
+
+
+
+</section>
+<!-- ORDERS POPUP -->
+
+<div class="orders-overlay" id="ordersOverlay">
+
+
+<div class="orders-popup">
+
+
+<div class="orders-header">
+
+<h2 id="ordersTitle">
+Orders
+</h2>
+
+
+<button id="closeOrders">
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+
+</div>
+
+
+
+<div class="orders-body" id="ordersBody">
+
+</div>
+
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+<!-- DETAILS POPUP -->
+
+<div class="details-overlay" id="detailsOverlay">
+
+
+<div class="details-popup">
+
+
+<div class="details-header">
+
+
+<h2>
+Order Details
+</h2>
+
+
+<button id="closeDetails">
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+
+</div>
+
+
+
+
+<div class="details-body">
+
+
+<div class="detail-box">
+
+<span>
+Order Number
+</span>
+
+<strong id="detailsNumber">
+-
+</strong>
+
+</div>
+
+
+
+<div class="detail-box">
+
+<span>
+Customer
+</span>
+
+<strong id="detailsCustomer">
+-
+</strong>
+
+</div>
+
+
+
+<div class="detail-box">
+
+<span>
+Phone
+</span>
+
+<strong id="detailsPhone">
+-
+</strong>
+
+</div>
+
+
+
+<div class="detail-box">
+
+<span>
+Address
+</span>
+
+<strong id="detailsAddress">
+-
+</strong>
+
+</div>
+
+
+
+
+<div id="detailsItems">
+
+</div>
+
+
+
+
+
+<div class="total-box">
+
+<span>
+Total
+</span>
+
+<strong id="detailsTotal">
+0 EGP
+</strong>
+
+</div>
+
+
+
+
+
+<div class="timer-container">
+
+
+<div class="timer-box" id="detailsTimer">
+
+00:00
+
+</div>
+
+
+<button id="addTime">
++
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="delivery-time-box" id="deliveryTimeBox">
+
+
+<h3>
+Delivery Time
+</h3>
+
+
+
+<div class="delivery-inputs">
+
+
+<div>
+
+<label>
+From
+</label>
+
+
+<input id="deliveryFrom" type="number" placeholder="15">
+
+
+</div>
+
+
+
+<div>
+
+<label>
+To
+</label>
+
+
+<input id="deliveryTo" type="number" placeholder="30">
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+<div class="details-footer">
+
+
+<button id="nextStatus">
+
+Accept
+
+</button>
+
+
+</div>
+
+
+
+</div>
+
+</div>
+<!-- HOW TO USE POPUP -->
+
+<div class="help-overlay" id="helpOverlay">
+
+
+<div class="help-popup">
+
+
+<h2>
+How To Use Kitchen
+</h2>
+
+
+<p>
+1- Accept order and start preparation.
+</p>
+
+
+<p>
+2- When food is ready move it to Ready.
+</p>
+
+
+<p>
+3- Add delivery time and send to Delivery.
+</p>
+
+
+<p>
+4- After customer receives order mark Delivered.
+</p>
+
+
+
+<button id="closeHelp">
+
+Close
+
+</button>
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+<!-- CANCEL ALERT -->
+
+<div class="cancel-alert" id="cancelAlert">
+
+
+<div class="cancel-alert-box">
+
+
+<h2>
+⚠️ Order Cancelled
+</h2>
+
+
+
+<p id="cancelAlertText">
+
+Order has been cancelled
+
+</p>
+
+
+
+
+<button id="cancelAlertOk">
+
+OK
+
+</button>
+
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+<!-- CANCELLED ORDERS POPUP -->
+
+<div class="cancelled-overlay" id="cancelledOverlay">
+
+
+<div class="cancelled-popup">
+
+
+<div class="cancelled-header">
+
+
+<h2>
+🚫 Cancelled Orders
+</h2>
+
+
+
+<button id="closeCancelled">
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+
+</div>
+
+
+
+<div id="cancelledBody">
+
+</div>
+
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+<footer class="footer">
+
+© 2026 Crepe Station Admin
+
+</footer>
+
+
+
+
+
+</main>
+
+
+</div>
+
+
+
+
+
+
+<script type="module" src="js/admin-orders.js"></script>
+
+
+</body>
+
+</html>

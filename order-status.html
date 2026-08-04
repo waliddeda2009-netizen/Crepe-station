@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Order Status - Crepe Station</title>
+
+
+<link rel="stylesheet" href="css/order-status.css">
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+
+<body>
+
+
+
+<div class="order-status-box">
+
+
+
+<!-- LOGO -->
+
+<div class="logo">
+
+<img 
+src="images/logo.png" 
+alt="Crepe Station Logo"
+class="restaurant-logo">
+
+</div>
+
+
+
+
+
+
+<!-- STATUS ICON -->
+
+<div class="icon" id="statusIcon">
+
+<i class="fa-solid fa-clock"></i>
+
+</div>
+
+
+
+
+
+
+
+<!-- STATUS TITLE -->
+
+<h1 id="statusTitle">
+
+Waiting...
+
+</h1>
+
+
+
+<p id="statusMessage">
+
+Checking your order...
+
+</p>
+
+
+
+
+
+
+
+
+
+<!-- ORDER NUMBER -->
+
+<div class="order-number">
+
+
+Order Number:
+
+
+<strong id="orderNumber">
+
+#
+
+</strong>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- ORDER DETAILS -->
+
+<section class="order-details">
+
+
+<h2>
+
+Your Order
+
+</h2>
+
+
+
+<div id="orderItems">
+
+
+<!-- Products Will Appear Here -->
+
+
+</div>
+
+
+
+
+
+<div class="total-box">
+
+
+<span>
+
+Total
+
+</span>
+
+
+
+<strong id="orderTotal">
+
+0 EGP
+
+</strong>
+
+
+
+</div>
+
+
+
+</section>
+<!-- DELIVERY TIME -->
+
+<div class="delivery-time" id="deliveryTime">
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- CUSTOMER TIMER -->
+
+<div class="customer-timer-box">
+
+
+<h3 id="timerTitle">
+
+</h3>
+
+
+
+<div class="customer-timer" id="customerTimer">
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- STATUS PROGRESS -->
+
+
+<section class="status-progress">
+
+
+
+
+
+<div class="step active">
+
+
+<div class="circle">
+
+✓
+
+</div>
+
+
+
+<span>
+
+Pending
+
+</span>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="line"></div>
+
+
+
+
+
+
+
+<div class="step">
+
+
+<div class="circle">
+
+2
+
+</div>
+
+
+
+<span>
+
+Preparing
+
+</span>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="line"></div>
+
+
+
+
+
+
+
+<div class="step">
+
+
+<div class="circle">
+
+3
+
+</div>
+
+
+
+<span>
+
+Delivery
+
+</span>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="line"></div>
+
+
+
+
+
+
+
+
+<div class="step">
+
+
+<div class="circle">
+
+4
+
+</div>
+
+
+
+<span>
+
+Delivered
+
+</span>
+
+
+</div>
+
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- CANCEL ORDER BUTTON -->
+
+<button id="cancelOrderBtn" class="cancel-order-btn">
+
+<i class="fa-solid fa-ban"></i>
+
+Cancel Order
+
+</button>
+
+
+
+
+
+
+<!-- CANCEL CONFIRM POPUP -->
+
+<div class="cancel-overlay" id="cancelOverlay" style="display:none;">
+
+    <div class="cancel-popup">
+
+        <h2>
+        Cancel Order
+        </h2>
+
+
+        <p>
+        Are you sure you want to cancel this order?
+        </p>
+
+
+        <div class="cancel-buttons">
+
+
+            <button id="confirmCancel">
+
+            Yes, Cancel
+
+            </button>
+
+
+
+            <button id="closeCancel">
+
+            No
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+<!-- BACK WEBSITE -->
+
+
+<a href="index.html" class="home-btn">
+
+
+<i class="fa-solid fa-house"></i>
+
+
+Back To Website
+
+
+</a>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- NOTIFICATION CONTAINER -->
+
+<div id="notificationContainer"></div>
+
+
+
+
+
+
+
+
+
+<script type="module" src="js/order-status.js"></script>
+
+
+
+</body>
+
+
+</html>
