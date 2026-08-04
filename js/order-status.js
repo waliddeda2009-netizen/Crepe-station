@@ -371,6 +371,8 @@ orderTotal.innerText=
 
 function showStatus(order){
 
+    clearTimer();
+
 
 
 orderNumber.innerText=
@@ -550,61 +552,20 @@ statusIcon.innerHTML=
 `;
 
 
-statusTitle.innerText=
-"On The Way";
+statusTitle.innerText="On The Way";
 
 
 statusMessage.innerText=
 "Your order is with delivery driver.";
 
 
-// إخفاء العداد القديم
 clearTimer();
 
 customerTimer.innerText="";
 
-if(timerTitle){
-
-timerTitle.innerText="";
-
-}
-
-
-// عرض الوقت المتوقع فقط
-if(order.deliveryTime){
-
 
 deliveryTime.innerText=
-
-"Expected Delivery : "
-
-+
-
-order.deliveryTime.from
-
-+
-
-" - "
-
-+
-
-order.deliveryTime.to
-
-+
-
-" Minutes";
-
-
-}else{
-
-
-deliveryTime.innerText=
-
 "Expected Delivery : 25 - 40 Minutes";
-
-
-}
-
 
 
 }
