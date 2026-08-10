@@ -1588,8 +1588,9 @@ closeDetailsBox();
 
 
 //==================================
-// CANCELLED ORDERS SYSTEM
+// CANCELLED ORDERS
 //==================================
+
 
 const cancelledBtn =
 document.getElementById("cancelledBtn");
@@ -1611,30 +1612,22 @@ const cancelCount =
 document.getElementById("cancelCount");
 
 
-const cancelAlert =
-document.getElementById("cancelAlert");
-
-
-const cancelAlertText =
-document.getElementById("cancelAlertText");
-
-
-const cancelAlertOk =
-document.getElementById("cancelAlertOk");
-
-
 
 let cancelledOrders=[];
 
-let oldCancelledCount=0;
 
 
 
+
+//==================================
+// LOAD CANCELLED ORDERS
+//==================================
 
 
 onSnapshot(
 
 collection(db,"cancelled"),
+
 
 (snapshot)=>{
 
@@ -1660,61 +1653,33 @@ id:item.id,
 
 
 
-// تحديث الرقم اللي جنب Cancelled Orders
+// تحديث الرقم بجانب Cancelled Orders
+
 
 if(cancelCount){
 
 
-let count=cancelledOrders.length;
-
-
-cancelCount.textContent=count;
+let count = cancelledOrders.length;
 
 
 
-if(count>0){
+cancelCount.innerText = count;
+
+
+
+if(count > 0){
+
 
 cancelCount.style.display="flex";
 
-}
 
-else{
+}else{
+
 
 cancelCount.style.display="none";
 
-}
-
-
 
 }
-
-
-
-
-
-// Alert عند وصول طلب ملغي جديد
-
-if(
-oldCancelledCount!==0 &&
-cancelledOrders.length > oldCancelledCount
-){
-
-
-let order =
-cancelledOrders[cancelledOrders.length-1];
-
-
-
-if(cancelAlert && cancelAlertText){
-
-
-cancelAlertText.innerText=
-
-`Order #${order.orderNumber || "---"} has been cancelled`;
-
-
-
-cancelAlert.classList.add("show");
 
 
 }
@@ -1722,17 +1687,6 @@ cancelAlert.classList.add("show");
 
 
 }
-
-
-
-oldCancelledCount =
-cancelledOrders.length;
-
-
-
-}
-
-
 
 );
 
@@ -1741,7 +1695,11 @@ cancelledOrders.length;
 
 
 
-// فتح قائمة الطلبات الملغية
+
+//==================================
+// OPEN CANCELLED POPUP
+//==================================
+
 
 if(cancelledBtn){
 
@@ -1758,19 +1716,23 @@ return;
 
 
 
+
 cancelledBody.innerHTML="";
+
+
 
 
 
 if(cancelledOrders.length===0){
 
 
-cancelledBody.innerHTML=
 
-`
+cancelledBody.innerHTML=`
+
 <p>
 No Cancelled Orders
 </p>
+
 `;
 
 
@@ -1784,29 +1746,37 @@ else{
 cancelledOrders.forEach(order=>{
 
 
+
 let div=document.createElement("div");
+
 
 
 div.className="cancelled-row";
 
 
 
-div.innerHTML=
-
-`
+div.innerHTML=`
 
 <h3>
+
 #${order.orderNumber || "---"}
+
 </h3>
 
 
+
 <p>
+
 ${order.customerName || "Customer"}
+
 </p>
 
 
+
 <p>
+
 ${order.total || 0} EGP
+
 </p>
 
 
@@ -1827,6 +1797,9 @@ cancelledBody.appendChild(div);
 
 
 
+
+
+
 cancelledOverlay.style.display="flex";
 
 
@@ -1841,10 +1814,13 @@ cancelledOverlay.style.display="flex";
 
 
 
+//==================================
+// CLOSE CANCELLED POPUP
+//==================================
 
-// قفل popup
 
 if(closeCancelled){
+
 
 
 closeCancelled.onclick=()=>{
@@ -1862,12 +1838,12 @@ cancelledOverlay.style.display="none";
 
 
 
-// قفل بالضغط برا
-
 if(cancelledOverlay){
 
 
+
 cancelledOverlay.onclick=(e)=>{
+
 
 
 if(e.target===cancelledOverlay){
@@ -1878,27 +1854,6 @@ cancelledOverlay.style.display="none";
 
 }
 
-
-};
-
-
-}
-
-
-
-
-
-
-
-// Alert OK
-
-if(cancelAlertOk){
-
-
-cancelAlertOk.onclick=()=>{
-
-
-cancelAlert.classList.remove("show");
 
 
 };
