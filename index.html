@@ -1,619 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crepe Station</title>
 
-<meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-
-<title>Crepe Station</title>
-
-
-<link rel="stylesheet" href="css/style.css">
-
-
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-<link rel="stylesheet" href="css/responsive.css">
-
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
-
 
 <body>
 
-
-
-
-<!-- =========================
-            HEADER
-========================= -->
-
-
 <header>
-
-
-<div class="navbar container">
-
-
-<a href="index.html" class="logo">
-
-
-<img src="images/logo.png" id="header-logo">
-
-
-</a>
-
-
-
-
-
-<nav>
-
-
-<a href="index.html">
-
-Home
-
-</a>
-
-
-
-<a href="about.html">
-
-About
-
-</a>
-
-
-
-<a href="feedback.html">
-
-Feedback
-
-</a>
-
-
-
-</nav>
-
-
-
-
-
-<div class="header-actions">
-
-
-
-
-
-<div class="cart-icon" id="openCart">
-
-
-<i class="fa-solid fa-cart-shopping"></i>
-
-
-<span id="cartCount">
-
-0
-
-</span>
-
-
-</div>
-
-
-
-
-
-<div class="menu-circle">
-
-
-<i class="fa-solid fa-bars"></i>
-
-
-</div>
-
-
-
-
-</div>
-
-
-
-
-
-</div>
-
-
+    <div class="navbar container">
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" id="header-logo" alt="Crepe Station Logo">
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="feedback.html">Feedback</a>
+        </nav>
+
+        <div class="header-actions">
+            <div class="cart-icon" id="openCart" role="button" tabindex="0" aria-label="Open Cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cartCount">0</span>
+            </div>
+
+            <div class="menu-circle" id="menuButton" role="button" tabindex="0" aria-label="Open Menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </div>
 </header>
 
-
-
-
-
-
-
-
-
-<!-- =========================
-        SIDEBAR MENU
-========================= -->
-
-
-<div class="bubble-menu">
-
-
-
-<a href="index.html">
-
-<i class="fa-solid fa-house"></i>
-
-Home
-
-</a>
-
-
-
-
-
-<a href="about.html">
-
-<i class="fa-solid fa-circle-info"></i>
-
-About
-
-</a>
-
-
-
-
-
-<a href="feedback.html">
-
-<i class="fa-solid fa-comment-dots"></i>
-
-Feedback
-
-</a>
-
-
-
-
-
+<div class="bubble-menu" id="bubbleMenu">
+    <a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+    <a href="about.html"><i class="fa-solid fa-circle-info"></i><span>About</span></a>
+    <a href="feedback.html"><i class="fa-solid fa-comment-dots"></i><span>Feedback</span></a>
 </div>
 
+<div id="restaurantClosed" class="restaurant-closed" aria-hidden="true">
+    <div class="closed-content">
+        <img src="images/logo.png" class="closed-logo" alt="Crepe Station Logo">
+        <div class="closed-icon"><i class="fa-solid fa-clock"></i></div>
+        <h2>We're Closed</h2>
+        <p class="closed-message">Sorry, we're currently closed.</p>
 
+        <div class="opening-hours">
+            <span class="hours-title">Opening Hours</span>
+            <strong>12:00 PM — 5:30 AM</strong>
+        </div>
 
-
-
-
-
-
-
-<!-- =========================
-            HERO
-========================= -->
-
+        <p class="next-opening">We're open daily from 12:00 PM</p>
+        <div class="closed-divider"></div>
+        <p class="closed-note">You can browse our menu, but ordering is currently unavailable.</p>
+    </div>
+</div>
 
 <section class="hero">
+    <div class="hero-content">
+        <img src="images/logo.png" id="hero-logo" class="hero-logo" alt="Crepe Station Logo">
 
+        <div class="hero-text">
+            <h1>Fresh Crepes Made For You</h1>
+            <p>Choose your favorite taste and enjoy</p>
+        </div>
 
-<div class="hero-content">
-
-
-
-<img src="images/logo.png"
-
-id="hero-logo"
-
-class="hero-logo">
-
-
-
-
-
-<div class="hero-text">
-
-
-<h1>
-
-Fresh Crepes Made For You
-
-</h1>
-
-
-
-
-<p>
-
-Choose your favorite taste and enjoy
-
-</p>
-
-
-
-
-</div>
-
-
-
-
-
-
-
-<a href="#menu" class="order-btn-main">
-
-
-Order Now
-
-
-</a>
-
-
-
-
-
-</div>
-
-
+        <a href="#menu" class="order-btn-main" id="heroOrderButton">Order Now</a>
+    </div>
 </section>
-
-<!-- =========================
-            MENU
-========================= -->
-
 
 <section class="menu-section" id="menu">
+    <div class="container">
+        <h2 class="section-title">Our Menu</h2>
 
+        <div class="categories-slider" id="categories"></div>
 
-
-<div class="container">
-
-
-
-<h2 class="section-title">
-
-Our Menu
-
-</h2>
-
-
-
-
-
-<!-- CATEGORY FILTER -->
-
-
-<div class="categories-slider" id="categories">
-
-
-<!-- Categories From Firebase -->
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<!-- PRODUCTS -->
-
-
-<div class="menu-grid" id="products">
-
-
-<!-- Products From Firebase -->
-
-
-</div>
-
-
-
-
-
-
-</div>
-
-
+        <div class="menu-grid" id="products"></div>
+    </div>
 </section>
-
-
-
-
-
-
-
-
-
-<!-- =========================
-            OFFERS
-========================= -->
-
 
 <section class="offers-section">
-
-
-<div class="container">
-
-
-<h2 class="section-title">
-
-Special Offers
-
-</h2>
-
-
-
-
-
-
-<div class="menu-grid" id="offers">
-
-
-<!-- Offers From Firebase -->
-
-
-</div>
-
-
-
-
-
-
-</div>
-
-
+    <div class="container">
+        <h2 class="section-title">Special Offers</h2>
+        <div class="menu-grid" id="offers"></div>
+    </div>
 </section>
 
+<!-- ADD PRODUCT / EXTRAS POPUP -->
+<div class="product-popup-overlay" id="productPopupOverlay"></div>
 
+<div class="product-popup" id="productPopup" aria-hidden="true">
+    <div class="product-popup-header">
+        <div>
+            <span class="popup-small-title">Customize your order</span>
+            <h3 id="popupProductName">Product</h3>
+        </div>
 
+        <button type="button" id="closeProductPopup" class="popup-close">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
 
+    <div class="popup-product-info">
+        <img id="popupProductImage" src="images/no-image.png" alt="">
+        <div>
+            <p id="popupProductDescription"></p>
+            <strong><span id="popupProductPrice">0</span> EGP</strong>
+        </div>
+    </div>
 
+    <div class="extras-section-popup">
+        <div class="extras-title-row">
+            <h4>Choose Extras</h4>
+            <span>Optional</span>
+        </div>
 
+        <div id="productExtrasList" class="product-extras-list"></div>
+    </div>
 
-<!-- =========================
-            CART
-========================= -->
+    <div class="popup-quantity-row">
+        <span>Quantity</span>
 
+        <div class="quantity-control">
+            <button type="button" id="popupQtyMinus" aria-label="Decrease quantity">
+                <i class="fa-solid fa-minus"></i>
+            </button>
 
+            <strong id="popupQty">1</strong>
+
+            <button type="button" id="popupQtyPlus" aria-label="Increase quantity">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="popup-total-row">
+        <span>Total</span>
+        <strong><span id="popupTotal">0</span> EGP</strong>
+    </div>
+
+    <button type="button" id="saveProductBtn" class="save-product-btn">
+        <i class="fa-solid fa-cart-plus"></i>
+        Save & Open Cart
+    </button>
+</div>
+
+<!-- CART -->
 <div class="cart-overlay" id="cartOverlay"></div>
 
-
-
-
 <div class="cart-box" id="cartBox">
+    <div class="cart-header">
+        <div>
+            <span class="cart-small-title">Your order</span>
+            <h3>Your Cart</h3>
+        </div>
 
+        <button type="button" id="closeCart" class="cart-close">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
 
+    <div class="cart-items" id="cartItems"></div>
 
-<div class="cart-header">
+    <div class="cart-footer">
+        <div class="cart-total-row">
+            <span>Total</span>
+            <strong><span id="cartTotal">0</span> EGP</strong>
+        </div>
 
-
-<h3>
-
-Your Order
-
-</h3>
-
-
-
-<i class="fa-solid fa-xmark" id="closeCart"></i>
-
-
+        <button id="checkoutBtn" type="button">
+            Checkout
+        </button>
+    </div>
 </div>
 
+<!-- NOTIFICATION -->
+<div id="appNotification" class="app-notification" aria-live="polite">
+    <div class="notification-icon">
+        <i class="fa-solid fa-cart-shopping"></i>
+    </div>
 
-
-
-
-
-<div class="cart-items" id="cartItems">
-
-
-<!-- Cart Items -->
-
-
+    <div>
+        <strong id="notificationTitle">Added to cart</strong>
+        <span id="notificationText"></span>
+    </div>
 </div>
-
-
-
-
-
-
-<div class="cart-footer">
-
-
-<h3>
-
-Total:
-
-<span id="cartTotal">
-
-0
-
-</span>
-
-EGP
-
-</h3>
-
-
-
-
-
-<button id="checkoutBtn">
-
-Checkout
-
-</button>
-
-
-
-</div>
-
-
-
-
-
-</div>
-
-<!-- =========================
-            FOOTER
-========================= -->
-
 
 <footer>
-
-
-<div class="container">
-
-
-
-
-
-
-<img src="images/logo.png"
-
-class="footer-logo"
-
-alt="Crepe Station Logo">
-
-
-
-
-
-
-<p>
-
-Fresh Taste • Fast Delivery • Premium Quality
-
-</p>
-
-
-
-
-
-
-
-
-
-<div class="social">
-
-
-
-
-
-
-<a href="https://www.facebook.com/share/1TYLLFBauy/?mibextid=wwXIfr" target="_blank">
-
-<i class="fa-brands fa-facebook-f"></i>
-
-</a>
-
-
-
-
-
-
-<a href="https://www.instagram.com/crepe__station_?igsh=bTVwZmw2N3YwdnNn" target="_blank">
-
-<i class="fa-brands fa-instagram"></i>
-
-</a>
-
-
-
-
-
-
-<a href="https://www.tiktok.com/@crepe.station6?_r=1&_t=ZS-98CUDtjubfW" target="_blank">
-
-<i class="fa-brands fa-tiktok"></i>
-
-</a>
-
-
-
-
-
-
-
-<a href="https://wa.me/message/F7W35X5N36DID1" target="_blank">
-
-<i class="fa-brands fa-whatsapp"></i>
-
-</a>
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-<p class="copyright">
-
-© 2026 Crepe Station. All Rights Reserved.
-
-</p>
-
-
-
-
-
-
-</div>
-
-
-
+    <div class="container">
+        <img src="images/logo.png" class="footer-logo" alt="Crepe Station Logo">
+
+        <p>Fresh Taste • Fast Delivery • Premium Quality</p>
+
+        <div class="social">
+            <a href="https://www.facebook.com/share/1TYLLFBauy/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="https://www.instagram.com/crepe__station_?igsh=bTVwZmw3N2YwdnNn" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="https://www.tiktok.com/@crepe.station6?_r=1&_t=ZS-98CUDtjubfW" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+
+            <a href="https://wa.me/message/F7W35X5N36DID1" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+        </div>
+
+        <p class="copyright">© 2026 Crepe Station. All Rights Reserved.</p>
+    </div>
 </footer>
-
-
-<!-- =========================
-        APP NOTIFICATION
-========================= -->
-
-<div id="appNotification" class="app-notification">
-
-<i class="fa-solid fa-bell"></i>
-
-<span id="notificationText"></span>
-
-</div>
-
-
 
 <script type="module" src="js/script.js"></script>
 
-
-
-
 </body>
-
-
 </html>

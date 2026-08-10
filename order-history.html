@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sales History | Crepe Station</title>
+
+
+<link rel="stylesheet" href="../css/style.css">
+
+<link rel="stylesheet" href="css/sales-history.css">
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+</head>
+
+
+<body>
+
+
+
+<!-- HEADER -->
+
+<header>
+
+
+<div class="admin-navbar">
+
+
+<a href="admin-dashboard.html" class="logo">
+
+<img src="../images/logo.png">
+
+</a>
+
+
+
+<h2>
+
+Sales History
+
+</h2>
+
+
+
+<a href="admin-orders.html" class="back-btn">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Orders
+
+</a>
+
+
+
+</div>
+
+
+</header>
+
+
+
+
+
+<!-- PAGE -->
+
+<section class="history-page">
+
+
+
+<div class="history-container">
+
+
+
+
+
+<h1>
+
+Sales History
+
+</h1>
+
+
+
+
+
+<!-- SUMMARY -->
+
+
+<div class="summary-boxes">
+
+
+
+<div class="summary-card">
+
+<i class="fa-solid fa-money-bill"></i>
+
+<h3>
+
+Completed Sales
+
+</h3>
+
+
+<span id="completedTotal">
+
+0 EGP
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="summary-card cancel">
+
+
+<i class="fa-solid fa-ban"></i>
+
+
+<h3>
+
+Cancelled Sales
+
+</h3>
+
+
+<span id="cancelledTotal">
+
+0 EGP
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="summary-card">
+
+
+<i class="fa-solid fa-calendar-day"></i>
+
+
+<h3>
+
+Today Sales
+
+</h3>
+
+
+<span id="todayTotal">
+
+0 EGP
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="summary-card">
+
+
+<i class="fa-solid fa-calendar-days"></i>
+
+
+<h3>
+
+Month Sales
+
+</h3>
+
+
+<span id="monthTotal">
+
+0 EGP
+
+</span>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- FILTER -->
+
+
+<div class="filters">
+
+
+
+<button id="todayFilter">
+
+Today
+
+</button>
+
+
+
+<button id="monthFilter">
+
+This Month
+
+</button>
+
+
+
+
+<button id="allFilter">
+
+All
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- ORDERS -->
+
+
+<div class="orders-history">
+
+
+
+<h2>
+
+Completed Orders
+
+</h2>
+
+
+
+
+<div id="completedOrders">
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="orders-history cancelled-history">
+
+
+
+<h2>
+
+Cancelled Orders
+
+</h2>
+
+
+
+
+<div id="cancelledOrders">
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- DETAILS POPUP -->
+
+
+<div class="details-overlay" id="detailsOverlay">
+
+
+
+<div class="history-details">
+
+
+
+<i class="fa-solid fa-xmark close-details"
+id="closeDetails"></i>
+
+
+
+
+<h2>
+
+Order Details
+
+</h2>
+
+
+
+
+<div id="detailsContent">
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<script type="module" src="js/sales-history.js"></script>
+
+
+</body>
+
+</html>

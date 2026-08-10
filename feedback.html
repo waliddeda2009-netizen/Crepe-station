@@ -1,386 +1,552 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback | Crepe Station</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<title>Feedback | Crepe Station</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
 
-<link rel="stylesheet" href="css/style.css">
-
-
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-<link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
-
-
-<body>
-
-
-
-
-
-<!-- HEADER -->
-
+<body class="inner-page feedback-page">
 
 <header>
 
+    <div class="navbar container">
 
-<div class="navbar container">
+        <a href="index.html" class="logo">
 
+            <img
+                src="images/logo.png"
+                id="header-logo"
+                alt="Crepe Station Logo"
+            >
 
+        </a>
 
-<a href="index.html" class="logo">
+        <nav>
 
+            <a href="index.html">Home</a>
 
-<img src="images/logo.png" id="header-logo">
+            <a href="about.html">About</a>
 
+            <a href="feedback.html" class="active-link">
+                Feedback
+            </a>
 
-</a>
+        </nav>
 
+        <div class="header-actions">
 
+            <div
+                class="cart-icon"
+                id="openCart"
+                role="button"
+                tabindex="0"
+                aria-label="Open Cart"
+            >
 
+                <i class="fa-solid fa-cart-shopping"></i>
 
+                <span id="cartCount">0</span>
 
+            </div>
 
-<nav>
+            <div
+                class="menu-circle"
+                id="menuButton"
+                role="button"
+                tabindex="0"
+                aria-label="Open Menu"
+            >
 
+                <i class="fa-solid fa-bars"></i>
 
-<a href="index.html">
+            </div>
 
-Home
+        </div>
 
-</a>
-
-
-
-<a href="about.html">
-
-About
-
-</a>
-
-
-
-<a href="feedback.html">
-
-Feedback
-
-</a>
-
-
-
-</nav>
-
-
-
-
-
-
-<div class="header-actions">
-
-
-<div class="menu-circle">
-
-
-<i class="fa-solid fa-bars"></i>
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-</div>
-
+    </div>
 
 </header>
 
 
+<div class="bubble-menu" id="bubbleMenu">
 
+    <a href="index.html">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+    </a>
 
+    <a href="about.html">
+        <i class="fa-solid fa-circle-info"></i>
+        <span>About</span>
+    </a>
 
-
-
-
-
-<!-- SIDEBAR -->
-
-
-<div class="bubble-menu">
-
-
-
-<a href="index.html">
-
-<i class="fa-solid fa-house"></i>
-
-Home
-
-</a>
-
-
-
-
-
-<a href="about.html">
-
-<i class="fa-solid fa-circle-info"></i>
-
-About
-
-</a>
-
-
-
-
-
-<a href="feedback.html">
-
-<i class="fa-solid fa-comment-dots"></i>
-
-Feedback
-
-</a>
-
-
-
-
+    <a href="feedback.html">
+        <i class="fa-solid fa-comment-dots"></i>
+        <span>Feedback</span>
+    </a>
 
 </div>
 
 
+<!-- HERO -->
 
+<section class="inner-hero feedback-hero">
 
+    <div class="inner-hero-overlay"></div>
 
+    <div class="inner-hero-content">
 
+        <img
+            src="images/logo.png"
+            class="inner-hero-logo"
+            alt="Crepe Station Logo"
+        >
 
+        <span class="inner-label">
+            YOUR VOICE MATTERS
+        </span>
 
+        <h1>Tell Us What You Think</h1>
 
-<!-- FEEDBACK CONTENT -->
+        <p>
+            Your feedback helps us make Crepe Station better.
+        </p>
 
-
-<section class="feedback-section">
-
-
-<div class="container">
-
-
-
-<h2 class="section-title">
-
-Feedback
-
-</h2>
-
-
-
-
-
-
-<div class="coming-soon">
-
-
-
-<h1>
-
-💬 Your Opinion Matters
-
-</h1>
-
-
-
-
-
-
-<p>
-
-We would love to hear your feedback,
-suggestions, and complaints.
-
-Your opinion helps us improve Crepe Station.
-
-</p>
-
-
-
-
-
-
-
-<a href="#" class="order-btn-main">
-
-Send Feedback
-
-</a>
-
-
-
-
-</div>
-
-
-
-
-
-
-</div>
-
+    </div>
 
 </section>
 
 
+<!-- FEEDBACK FORM -->
+
+<section class="feedback-section">
+
+    <div class="container">
+
+        <div class="feedback-wrapper">
+
+            <div class="feedback-intro">
+
+                <span class="about-label">
+                    FEEDBACK
+                </span>
+
+                <h2>
+                    Share Your Experience
+                </h2>
+
+                <p>
+                    Whether you loved your order, have a suggestion,
+                    or faced a problem, we want to hear from you.
+                </p>
+
+            </div>
 
 
+            <form id="feedbackForm" class="feedback-form">
+
+                <!-- NAME -->
+
+                <div class="form-group">
+
+                    <label for="feedbackName">
+                        Your Name
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        <input
+                            type="text"
+                            id="feedbackName"
+                            name="name"
+                            placeholder="Enter your name"
+                            maxlength="80"
+                            required
+                        >
+
+                    </div>
+
+                </div>
 
 
+                <!-- RATING -->
 
+                <div class="form-group">
+
+                    <label>
+                        Your Rating
+                    </label>
+
+                    <div class="rating-box">
+
+                        <div
+                            class="star-rating"
+                            id="starRating"
+                            aria-label="Choose rating"
+                        >
+
+                            <button type="button" data-rating="1">
+                                <i class="fa-solid fa-star"></i>
+                            </button>
+
+                            <button type="button" data-rating="2">
+                                <i class="fa-solid fa-star"></i>
+                            </button>
+
+                            <button type="button" data-rating="3">
+                                <i class="fa-solid fa-star"></i>
+                            </button>
+
+                            <button type="button" data-rating="4">
+                                <i class="fa-solid fa-star"></i>
+                            </button>
+
+                            <button type="button" data-rating="5">
+                                <i class="fa-solid fa-star"></i>
+                            </button>
+
+                        </div>
+
+                        <span id="ratingValue">
+                            0 / 5
+                        </span>
+
+                        <input
+                            type="hidden"
+                            id="feedbackRating"
+                            value="0"
+                        >
+
+                    </div>
+
+                    <small class="rating-hint">
+                        Half-star ratings are supported.
+                    </small>
+
+                </div>
+
+
+                <!-- TYPE -->
+
+                <div class="form-group">
+
+                    <label>
+                        Feedback Type
+                    </label>
+
+                    <div
+                        class="feedback-types"
+                        id="feedbackTypes"
+                    >
+
+                        <button
+                            type="button"
+                            class="feedback-type"
+                            data-type="Review"
+                        >
+
+                            <span class="type-icon">
+                                <i class="fa-solid fa-star"></i>
+                            </span>
+
+                            <span>
+                                <strong>Review</strong>
+                                <small>Share your experience</small>
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="feedback-type"
+                            data-type="Complaint"
+                        >
+
+                            <span class="type-icon">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                            </span>
+
+                            <span>
+                                <strong>Complaint</strong>
+                                <small>Tell us about a problem</small>
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="feedback-type"
+                            data-type="Suggestion"
+                        >
+
+                            <span class="type-icon">
+                                <i class="fa-solid fa-lightbulb"></i>
+                            </span>
+
+                            <span>
+                                <strong>Suggestion</strong>
+                                <small>Help us improve</small>
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="feedback-type"
+                            data-type="Inquiry"
+                        >
+
+                            <span class="type-icon">
+                                <i class="fa-solid fa-circle-question"></i>
+                            </span>
+
+                            <span>
+                                <strong>Inquiry</strong>
+                                <small>Ask us anything</small>
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                    <input
+                        type="hidden"
+                        id="feedbackType"
+                        value=""
+                    >
+
+                </div>
+
+
+                <!-- MESSAGE -->
+
+                <div class="form-group">
+
+                    <label for="feedbackMessage">
+                        Your Message
+                    </label>
+
+                    <div class="textarea-wrapper">
+
+                        <i class="fa-solid fa-pen"></i>
+
+                        <textarea
+                            id="feedbackMessage"
+                            name="message"
+                            placeholder="Write your feedback here..."
+                            maxlength="1000"
+                            required
+                        ></textarea>
+
+                    </div>
+
+                    <div class="message-counter">
+                        <span id="messageCounter">0</span>/1000
+                    </div>
+
+                </div>
+
+
+                <!-- SEND -->
+
+                <button
+                    type="submit"
+                    class="feedback-send-btn"
+                    id="feedbackSendBtn"
+                >
+
+                    <span>
+                        Send Feedback
+                    </span>
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                </button>
+
+            </form>
+
+
+            <!-- SUCCESS -->
+
+            <div
+                class="feedback-success"
+                id="feedbackSuccess"
+            >
+
+                <div class="success-icon">
+
+                    <i class="fa-solid fa-check"></i>
+
+                </div>
+
+                <span class="about-label">
+                    FEEDBACK RECEIVED
+                </span>
+
+                <h2>
+                    Thank You!
+                </h2>
+
+                <p>
+                    Your feedback has been saved successfully.
+                    You can also send it directly to us through WhatsApp.
+                </p>
+
+
+                <div class="whatsapp-feedback">
+
+                    <a
+                        href="#"
+                        id="whatsappOne"
+                        class="whatsapp-feedback-btn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        <span class="whatsapp-icon">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </span>
+
+                        <span>
+                            <strong>WhatsApp 1</strong>
+                            <small>Send your feedback</small>
+                        </span>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+
+                    <a
+                        href="#"
+                        id="whatsappTwo"
+                        class="whatsapp-feedback-btn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        <span class="whatsapp-icon">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </span>
+
+                        <span>
+                            <strong>WhatsApp 2</strong>
+                            <small>Send your feedback</small>
+                        </span>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+
+                <a
+                    href="index.html"
+                    class="back-home-btn"
+                >
+
+                    <i class="fa-solid fa-house"></i>
+
+                    Back To Home
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 
 <!-- FOOTER -->
 
-
 <footer>
 
-
-<div class="container">
-
-
-<img src="images/logo.png"
-
-class="footer-logo"
-
-alt="Crepe Station Logo">
-
-
-
-
-
-<p>
-
-Fresh Taste • Fast Delivery • Premium Quality
-
-</p>
-
-
-
-
-
-
-
-<div class="social">
-
-
-
-
-
-<a href="https://www.facebook.com/share/1TYLLFBauy/?mibextid=wwXIfr" target="_blank">
-
-<i class="fa-brands fa-facebook-f"></i>
-
-</a>
-
-
-
-
-
-
-<a href="https://www.instagram.com/crepe__station_?igsh=bTVwZmw2N3YwdnNn" target="_blank">
-
-<i class="fa-brands fa-instagram"></i>
-
-</a>
-
-
-
-
-
-
-
-<a href="https://www.tiktok.com/@crepe.station6?_r=1&_t=ZS-98CUDtjubfW" target="_blank">
-
-<i class="fa-brands fa-tiktok"></i>
-
-</a>
-
-
-
-
-
-
-
-<a href="https://wa.me/message/F7W35X5N36DID1" target="_blank">
-
-<i class="fa-brands fa-whatsapp"></i>
-
-</a>
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-<p class="copyright">
-
-© 2026 Crepe Station. All Rights Reserved.
-
-</p>
-
-
-
-
-
-
-
-</div>
-
+    <div class="container">
+
+        <img
+            src="images/logo.png"
+            class="footer-logo"
+            alt="Crepe Station Logo"
+        >
+
+        <p>
+            Fresh Taste • Fast Delivery • Premium Quality
+        </p>
+
+        <div class="social">
+
+            <a
+                href="https://www.facebook.com/share/1TYLLFBauy/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a
+                href="https://www.instagram.com/crepe__station_?igsh=bTVwZmw3N2YwdnNn"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a
+                href="https://www.tiktok.com/@crepe.station6?_r=1&_t=ZS-98CUDtjubfW"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+
+            <a
+                href="https://wa.me/message/F7W35X5N36DID1"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 Crepe Station. All Rights Reserved.
+        </p>
+
+    </div>
 
 </footer>
 
 
-
-
-
-
-
-<script src="js/main.js"></script>
-
-
+<script type="module" src="js/script.js"></script>
 
 </body>
-
-
 </html>

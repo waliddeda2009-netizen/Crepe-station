@@ -1,323 +1,450 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+    <title>About Us | Crepe Station</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 
-<title>About Us | Crepe Station</title>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
 
-
-<link rel="stylesheet" href="css/style.css">
-
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-<link rel="stylesheet" href="css/responsive.css">
-
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
-
-<body>
-
-
-
-
-<!-- HEADER -->
-
+<body class="inner-page">
 
 <header>
+    <div class="navbar container">
 
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" id="header-logo" alt="Crepe Station Logo">
+        </a>
 
-<div class="navbar container">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active-link">About</a>
+            <a href="feedback.html">Feedback</a>
+        </nav>
 
+        <div class="header-actions">
 
+            <div
+                class="cart-icon"
+                id="openCart"
+                role="button"
+                tabindex="0"
+                aria-label="Open Cart"
+            >
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cartCount">0</span>
+            </div>
 
-<a href="index.html" class="logo">
+            <div
+                class="menu-circle"
+                id="menuButton"
+                role="button"
+                tabindex="0"
+                aria-label="Open Menu"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </div>
 
-<img src="images/logo.png" id="header-logo">
-
-</a>
-
-
-
-
-
-<nav>
-
-
-<a href="index.html">
-Home
-</a>
-
-
-<a href="about.html">
-About
-</a>
-
-
-<a href="feedback.html">
-Feedback
-</a>
-
-
-</nav>
-
-
-
-
-
-<div class="header-actions">
-
-
-
-<div class="menu-circle">
-
-<i class="fa-solid fa-bars"></i>
-
-</div>
-
-
-</div>
-
-
-
-</div>
-
-
+        </div>
+    </div>
 </header>
 
+<div class="bubble-menu" id="bubbleMenu">
 
+    <a href="index.html">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+    </a>
 
+    <a href="about.html">
+        <i class="fa-solid fa-circle-info"></i>
+        <span>About</span>
+    </a>
 
-
-
-
-<!-- SIDEBAR -->
-
-
-<div class="bubble-menu">
-
-
-<a href="index.html">
-
-<i class="fa-solid fa-house"></i>
-
-Home
-
-</a>
-
-
-
-<a href="about.html">
-
-<i class="fa-solid fa-circle-info"></i>
-
-About
-
-</a>
-
-
-
-
-<a href="feedback.html">
-
-<i class="fa-solid fa-comment-dots"></i>
-
-Feedback
-
-</a>
-
-
+    <a href="feedback.html">
+        <i class="fa-solid fa-comment-dots"></i>
+        <span>Feedback</span>
+    </a>
 
 </div>
 
 
+<!-- ABOUT HERO -->
 
+<section class="inner-hero">
 
+    <div class="inner-hero-overlay"></div>
 
+    <div class="inner-hero-content">
 
+        <img
+            src="images/logo.png"
+            class="inner-hero-logo"
+            alt="Crepe Station Logo"
+        >
 
+        <span class="inner-label">ABOUT CREPE STATION</span>
 
-<!-- ABOUT CONTENT -->
+        <h1>More Than Just A Crepe</h1>
 
+        <p>
+            Fresh taste, quality ingredients and a place made
+            for people who love good food.
+        </p>
 
-<section class="about-section">
-
-
-<div class="container">
-
-
-
-<h2 class="section-title">
-
-About Crepe Station
-
-</h2>
-
-
-
-
-
-<div class="coming-soon">
-
-
-<h1>
-
-🥞 Our Story
-
-</h1>
-
-
-
-<p>
-
-Crepe Station brings you fresh and delicious crepes
-made with premium ingredients and unique flavors.
-
-We focus on quality, taste, and making every order
-a special experience.
-
-</p>
-
-
-
-</div>
-
-
-
-
-</div>
-
+    </div>
 
 </section>
 
 
+<!-- OUR STORY -->
+
+<section class="about-section">
+
+    <div class="container">
+
+        <div class="about-content about-reveal">
+
+            <div class="about-icon">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+
+            <span class="about-label">OUR STORY</span>
+
+            <h2>Made With Passion</h2>
+
+            <p>
+                At Crepe Station, we believe that great food is more
+                than just ingredients. It's about the taste, the
+                experience and the moment you enjoy it.
+            </p>
+
+            <p>
+                We prepare every order with care, using quality
+                ingredients and flavors made to satisfy every taste.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
 
 
+<!-- WHAT WE OFFER -->
+
+<section class="about-section about-dark">
+
+    <div class="container">
+
+        <div class="section-heading about-reveal">
+
+            <span class="about-label">WHAT WE OFFER</span>
+
+            <h2>Something For Everyone</h2>
+
+            <p>
+                From sweet favorites to savory creations,
+                there is always something delicious waiting for you.
+            </p>
+
+        </div>
 
 
+        <div class="about-cards">
 
+            <div class="about-card about-reveal">
+
+                <div class="about-card-icon">
+                    <i class="fa-solid fa-cookie-bite"></i>
+                </div>
+
+                <h3>Fresh Crepes</h3>
+
+                <p>
+                    Freshly prepared crepes with flavors
+                    made for every mood.
+                </p>
+
+            </div>
+
+
+            <div class="about-card about-reveal">
+
+                <div class="about-card-icon">
+                    <i class="fa-solid fa-bowl-food"></i>
+                </div>
+
+                <h3>Quality Ingredients</h3>
+
+                <p>
+                    Carefully selected ingredients for
+                    a better taste and experience.
+                </p>
+
+            </div>
+
+
+            <div class="about-card about-reveal">
+
+                <div class="about-card-icon">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+
+                <h3>Fast Delivery</h3>
+
+                <p>
+                    Enjoy your favorite food without
+                    unnecessary waiting.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WHY US -->
+
+<section class="about-section">
+
+    <div class="container">
+
+        <div class="why-grid">
+
+            <div class="why-image about-reveal">
+
+                <img
+                    src="images/background.png"
+                    alt="Crepe Station"
+                >
+
+                <div class="why-image-logo">
+                    <img src="images/logo.png" alt="Crepe Station">
+                </div>
+
+            </div>
+
+
+            <div class="why-content about-reveal">
+
+                <span class="about-label">WHY CREPE STATION?</span>
+
+                <h2>We Care About Every Order</h2>
+
+                <div class="why-item">
+
+                    <div>
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+
+                    <span>
+                        Freshly prepared food
+                    </span>
+
+                </div>
+
+
+                <div class="why-item">
+
+                    <div>
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+
+                    <span>
+                        Quality ingredients
+                    </span>
+
+                </div>
+
+
+                <div class="why-item">
+
+                    <div>
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+
+                    <span>
+                        Carefully prepared orders
+                    </span>
+
+                </div>
+
+
+                <div class="why-item">
+
+                    <div>
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+
+                    <span>
+                        A taste worth coming back for
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- LOCATION -->
+
+<section class="location-section">
+
+    <div class="container">
+
+        <div class="section-heading about-reveal">
+
+            <span class="about-label">FIND US</span>
+
+            <h2>Our Location</h2>
+
+            <p>
+                Come visit Crepe Station and enjoy your favorite taste.
+            </p>
+
+        </div>
+
+
+        <div class="location-box about-reveal">
+
+            <div class="location-info">
+
+                <div class="location-info-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <h3>Crepe Station</h3>
+
+                <p>
+                    Tanta, Egypt
+                </p>
+
+                <p class="location-note">
+                    Located on the same street as
+                    Shibl El-Enany, directly opposite.
+                </p>
+
+                <a
+                    href="https://maps.app.goo.gl/K56TDFEvV9tYqhz97"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="map-button"
+                >
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    Open Location
+                </a>
+
+            </div>
+
+
+            <div class="map-wrapper">
+
+                <iframe
+                    src="https://www.google.com/maps?q=Shibl%20El-Enany%2C%20Tanta%2C%20Egypt&output=embed"
+                    loading="lazy"
+                    allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Crepe Station Location"
+                ></iframe>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 
 <!-- FOOTER -->
 
-
 <footer>
 
+    <div class="container">
 
-<div class="container">
+        <img
+            src="images/logo.png"
+            class="footer-logo"
+            alt="Crepe Station Logo"
+        >
 
+        <p>
+            Fresh Taste • Fast Delivery • Premium Quality
+        </p>
 
-<img src="images/logo.png"
+        <div class="social">
 
-class="footer-logo"
+            <a
+                href="https://www.facebook.com/share/1TYLLFBauy/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+            >
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
 
-alt="Crepe Station Logo">
+            <a
+                href="https://www.instagram.com/crepe__station_?igsh=bTVwZmw3N2YwdnNn"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+            >
+                <i class="fa-brands fa-instagram"></i>
+            </a>
 
+            <a
+                href="https://www.tiktok.com/@crepe.station6?_r=1&_t=ZS-98CUDtjubfW"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok"
+            >
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
 
+            <a
+                href="https://wa.me/message/F7W35X5N36DID1"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+            >
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
 
+        </div>
 
+        <p class="copyright">
+            © 2026 Crepe Station. All Rights Reserved.
+        </p>
 
-<p>
-
-Fresh Taste • Fast Delivery • Premium Quality
-
-</p>
-
-
-
-
-
-<div class="social">
-
-
-
-<a href="https://www.facebook.com/share/1TYLLFBauy/?mibextid=wwXIfr" target="_blank">
-
-<i class="fa-brands fa-facebook-f"></i>
-
-</a>
-
-
-
-
-
-<a href="https://www.instagram.com/crepe__station_?igsh=bTVwZmw2N3YwdnNn" target="_blank">
-
-<i class="fa-brands fa-instagram"></i>
-
-</a>
-
-
-
-
-
-<a href="https://www.tiktok.com/@crepe.station6?_r=1&_t=ZS-98CUDtjubfW" target="_blank">
-
-<i class="fa-brands fa-tiktok"></i>
-
-</a>
-
-
-
-
-
-<a href="https://wa.me/message/F7W35X5N36DID1" target="_blank">
-
-<i class="fa-brands fa-whatsapp"></i>
-
-</a>
-
-
-
-
-</div>
-
-
-
-
-
-
-<p class="copyright">
-
-© 2026 Crepe Station. All Rights Reserved.
-
-</p>
-
-
-
-
-
-
-</div>
-
+    </div>
 
 </footer>
 
-
-
-
-
-
-
-<script src="js/main.js"></script>
-
+<script type="module" src="js/script.js"></script>
 
 </body>
-
-
 </html>
