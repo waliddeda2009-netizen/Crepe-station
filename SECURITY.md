@@ -1,21 +1,35 @@
-# Security Policy
+Security Policy
 
-## Supported Versions
+Reporting a Vulnerability
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+At Crepe Station, we take the security of our website and users seriously.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+If you discover a security vulnerability or believe you have found a security issue affecting the Crepe Station website, please report it privately rather than publicly disclosing it.
 
-## Reporting a Vulnerability
+How to Report
 
-Use this section to tell people how to report a vulnerability.
+Please contact the Crepe Station team through the official contact information provided on our website.
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+When reporting a vulnerability, please include:
+
+- A clear description of the issue.
+- The affected page, feature, or URL.
+- Steps to reproduce the issue, if possible.
+- Any relevant screenshots or technical details.
+- The potential impact of the vulnerability.
+
+Please do not include passwords, payment information, or other sensitive personal information in your report.
+
+What to Expect
+
+We will review legitimate security reports and investigate reported vulnerabilities as appropriate.
+
+We may contact you if we need additional information to reproduce or understand the issue.
+
+If a vulnerability is confirmed, we will take reasonable steps to address it and improve the security of our website.
+
+Responsible Disclosure
+
+Please allow us reasonable time to investigate and address a reported security issue before publicly disclosing it.
+
+Thank you for helping us keep Crepe Station and its customers safe.
